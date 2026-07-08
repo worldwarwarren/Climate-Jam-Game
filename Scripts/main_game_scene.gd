@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var Transition = $Transition
 #Lists all of the microgames available
 var microgames = [
 	preload("res://Scenes/Microgames/PressButton.tscn"),
@@ -7,7 +8,8 @@ var microgames = [
 ]
 #Checks the last microgame that has been played
 #Used later to prevent repeats
-var last_microgame = null
+var last_microgame_scene = null
+var last_microgame = null # For queue freeing the old one during the transition
 
 func _ready():
 	game_loop()
@@ -23,14 +25,19 @@ func play_microgame():
 	#Chooses a random microgame from the microgames list
 	var microgame_scene = microgames.pick_random()
 	#Checks if the microgame was the last one played
-	while microgame_scene == last_microgame:
+	while microgame_scene == last_microgame_scene:
 		microgame_scene = microgames.pick_random()
 	#Sets the current game as the new "last_microgame"
-	last_microgame = microgame_scene
-	
+	last_microgame_scene = microgame_scene
+		
 	#Instantiates the microgame, adds it as a child, and centers it.
 	var microgame = microgame_scene.instantiate()
+	# Transition
+	await Transition.transition(microgame.verb)
+	if last_microgame != null:
+		last_microgame.queue_free()
 	add_child(microgame)
+	print("added microgame")
 	#Position line could be replaced if container is used later on
 	microgame.position = Vector2(576, 324)
 	
@@ -44,4 +51,4 @@ func play_microgame():
 		print("WIN")
 	else:
 		print("LOSE")
-	microgame.queue_free()
+	last_microgame = microgame

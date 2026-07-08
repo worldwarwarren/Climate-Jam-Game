@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1vfsi")
+verb = "Greying"
 
 [node name="Button" type="Button" parent="." unique_id=1452016003]
 layout_mode = 1

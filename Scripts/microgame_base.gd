@@ -2,6 +2,7 @@ extends Node
 
 signal won
 signal lost
+@export var verb: String
 
 var did_win = false
 

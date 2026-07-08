@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://vusk435on3e8"]
 
 [ext_resource type="Script" uid="uid://d2ej0tbw582xe" path="res://Scripts/main_game_scene.gd" id="1_cp132"]
+[ext_resource type="PackedScene" uid="uid://rvxg5gqb5ck7" path="res://Scenes/Transition.tscn" id="2_2axvc"]
 
 [node name="Main" type="Node2D" unique_id=796776483]
 script = ExtResource("1_cp132")
+
+[node name="Transition" parent="." unique_id=2028350594 instance=ExtResource("2_2axvc")]
