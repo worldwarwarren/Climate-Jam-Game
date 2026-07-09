@@ -10,6 +10,8 @@ var microgames = [
 #Used later to prevent repeats
 var last_microgame_scene = null
 var last_microgame = null # For queue freeing the old one during the transition
+# Checking if the player lost or not so they can retry
+var lost = false
 
 func _ready():
 	game_loop()
@@ -28,12 +30,17 @@ func play_microgame():
 	while microgame_scene == last_microgame_scene:
 		microgame_scene = microgames.pick_random()
 	#Sets the current game as the new "last_microgame"
+	if lost:
+		microgame_scene = last_microgame_scene
 	last_microgame_scene = microgame_scene
 		
 	#Instantiates the microgame, adds it as a child, and centers it.
 	var microgame = microgame_scene.instantiate()
 	# Transition
-	await Transition.transition(microgame.verb)
+	if lost:
+		await Transition.transition("Spinning")
+	else:
+		await Transition.transition(microgame.verb)
 	if last_microgame != null:
 		last_microgame.queue_free()
 	add_child(microgame)
@@ -49,6 +56,8 @@ func play_microgame():
 	#Checks if the game was won and then deletes the instance
 	if microgame.did_win:
 		print("WIN")
+		lost = false
 	else:
 		print("LOSE")
+		lost = true
 	last_microgame = microgame
