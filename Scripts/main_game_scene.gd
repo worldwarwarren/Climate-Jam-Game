@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var Transition = $Transition
+@onready var GameTimer = $GameTimer
 #Lists all of the microgames available
 var microgames = [
 	preload("res://Scenes/Microgames/PressButton.tscn"),
@@ -51,7 +52,8 @@ func play_microgame():
 	#Sets the difficulty/speed. Does nothing right now.
 	microgame.start(1.0)
 	#Times the game
-	await get_tree().create_timer(3.0).timeout
+	GameTimer.start()
+	await GameTimer.timeout
 	
 	#Checks if the game was won and then deletes the instance
 	if microgame.did_win:

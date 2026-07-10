@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://5126wponcipe" path="res://Scripts/transition.gd" id="1_ml2rw"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_obibw"]
+font_size = 76
+
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
 font_size = 53
 font_color = Color(0, 0, 0, 1)
@@ -60,12 +63,23 @@ _data = {
 &"transition2": SubResource("Animation_rr8bd")
 }
 
-[node name="Transition" type="Node2D" unique_id=2028350594 node_paths=PackedStringArray("WorldKept", "_animation_player")]
+[node name="Transition" type="Node2D" unique_id=2028350594 node_paths=PackedStringArray("WorldKept", "_animation_player", "TimeLeft")]
 script = ExtResource("1_ml2rw")
 WorldKept = NodePath("CanvasLayer/ColorRect/WorldKept")
 _animation_player = NodePath("AnimationPlayer")
+TimeLeft = NodePath("CanvasLayer/TimeLeft")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2120976770]
+
+[node name="TimeLeft" type="Label" parent="CanvasLayer" unique_id=317539684]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -105.0
+offset_right = 43.0
+grow_vertical = 0
+text = "3"
+label_settings = SubResource("LabelSettings_obibw")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=678532620]
 anchors_preset = 15

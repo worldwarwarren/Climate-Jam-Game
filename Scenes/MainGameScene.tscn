@@ -6,4 +6,9 @@
 [node name="Main" type="Node2D" unique_id=796776483]
 script = ExtResource("1_cp132")
 
-[node name="Transition" parent="." unique_id=2028350594 instance=ExtResource("2_2axvc")]
+[node name="Transition" parent="." unique_id=2028350594 node_paths=PackedStringArray("GameTimer") instance=ExtResource("2_2axvc")]
+GameTimer = NodePath("../GameTimer")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1645432464]
+wait_time = 3.0
+one_shot = true
