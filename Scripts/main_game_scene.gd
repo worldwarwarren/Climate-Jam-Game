@@ -58,9 +58,9 @@ func play_microgame():
 	microgame.position = Vector2(576, 324)
 	
 	#Sets the difficulty/speed. Does nothing right now.
-	microgame.start(1.0)
+	microgame.start(difficulty)
 	#Times the game
-	GameTimer.start()
+	GameTimer.start(microgame.time)
 	await GameTimer.timeout
 	
 	#Checks if the game was won and then deletes the instance

@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6otre")
 verb = "Blueing"
+time = 3.0
 
 [node name="Button" type="Button" parent="." unique_id=1452016003]
 layout_mode = 1

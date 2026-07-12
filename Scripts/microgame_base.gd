@@ -3,11 +3,12 @@ extends Node
 signal won
 signal lost
 @export var verb: String
+@export var time: float
 
 var did_win = false
 
 func start(speed):
-	pass
+	time = time/speed
 	
 func win():
 	if not did_win:
