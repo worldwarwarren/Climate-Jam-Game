@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b00po0ss65o2j"]
 
-[ext_resource type="Script" uid="uid://bm44fa7dmvpis" path="res://Scenes/Microgames/press_button.gd" id="1_1vfsi"]
+[ext_resource type="Script" uid="uid://bm44fa7dmvpis" path="res://Scripts/Microgames/press_button.gd" id="1_1vfsi"]
 
 [node name="PressButton" type="Control" unique_id=352911903]
 layout_mode = 3

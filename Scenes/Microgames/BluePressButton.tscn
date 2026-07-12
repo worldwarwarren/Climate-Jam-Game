@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8bb0jekjguvc"]
 
-[ext_resource type="Script" uid="uid://bm44fa7dmvpis" path="res://Scenes/Microgames/press_button.gd" id="1_6otre"]
+[ext_resource type="Script" uid="uid://bm44fa7dmvpis" path="res://Scripts/Microgames/press_button.gd" id="1_6otre"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp132"]
 bg_color = Color(9.62615e-08, 0.22327149, 0.35540918, 1)
