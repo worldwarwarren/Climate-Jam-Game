@@ -11,9 +11,12 @@ var microgames = [
 #Checks the last microgame that has been played
 #Used later to prevent repeats
 var last_microgame_scene = null
+@onready var microgames_left = microgames.size() # Tracking microgames that have been used already
 var last_microgame = null # For queue freeing the old one during the transition
 # Checking if the player lost or not so they can retry
 var lost = false
+# Difficulty
+var difficulty = 1
 
 func _ready():
 	game_loop()
@@ -26,6 +29,10 @@ func game_loop():
 
 #Function to play a microgame
 func play_microgame():
+	if microgames_left == 0:
+		microgames_left = microgames.size()
+		difficulty += 1
+		print("Difficulty " + str(difficulty))
 	#Chooses a random microgame from the microgames list
 	var microgame_scene = microgames.pick_random()
 	#Checks if the microgame was the last one played
@@ -62,6 +69,7 @@ func play_microgame():
 		score += 1
 		print(score)
 		lost = false
+		microgames_left -= 1
 	else:
 		print("LOSE")
 		lost = true
