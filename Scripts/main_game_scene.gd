@@ -1,4 +1,5 @@
 extends Node2D
+var score = 0
 
 @onready var Transition = $Transition
 @onready var GameTimer = $GameTimer
@@ -39,9 +40,9 @@ func play_microgame():
 	var microgame = microgame_scene.instantiate()
 	# Transition
 	if lost:
-		await Transition.transition("Spinning")
+		await Transition.transition("Spinning", score)
 	else:
-		await Transition.transition(microgame.verb)
+		await Transition.transition(microgame.verb, score)
 	if last_microgame != null:
 		last_microgame.queue_free()
 	add_child(microgame)
@@ -58,6 +59,8 @@ func play_microgame():
 	#Checks if the game was won and then deletes the instance
 	if microgame.did_win:
 		print("WIN")
+		score += 1
+		print(score)
 		lost = false
 	else:
 		print("LOSE")

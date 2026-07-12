@@ -63,11 +63,12 @@ _data = {
 &"transition2": SubResource("Animation_rr8bd")
 }
 
-[node name="Transition" type="Node2D" unique_id=2028350594 node_paths=PackedStringArray("WorldKept", "_animation_player", "TimeLeft")]
+[node name="Transition" type="Node2D" unique_id=2028350594 node_paths=PackedStringArray("WorldKept", "_animation_player", "TimeLeft", "ScoreLabel")]
 script = ExtResource("1_ml2rw")
 WorldKept = NodePath("CanvasLayer/ColorRect/WorldKept")
 _animation_player = NodePath("AnimationPlayer")
 TimeLeft = NodePath("CanvasLayer/TimeLeft")
+ScoreLabel = NodePath("CanvasLayer/ColorRect/Score")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2120976770]
 
@@ -110,6 +111,24 @@ grow_vertical = 2
 text = "And The World Kept Spinning!"
 label_settings = SubResource("LabelSettings_j5tva")
 horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="CanvasLayer/ColorRect" unique_id=680032141]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.999756
+offset_top = 224.0
+offset_right = 112.000244
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_j5tva")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1485847055]
 libraries/ = SubResource("AnimationLibrary_rr8bd")
