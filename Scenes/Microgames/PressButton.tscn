@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1vfsi")
 verb = "Greying"
-time = 4.0
+difficultyTimes = Array[float]([4.0, 3.0, 2.0])
 
 [node name="Button" type="Button" parent="." unique_id=1452016003]
 layout_mode = 1
