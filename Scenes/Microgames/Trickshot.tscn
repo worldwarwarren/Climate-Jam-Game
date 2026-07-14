@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bl3mdupe6rf3l"]
+
+[ext_resource type="Script" uid="uid://ca7e5aww7ay7a" path="res://Scripts/Microgames/trickshot.gd" id="1_5ex8g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
+radius = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
+size = Vector2(198, 58)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ex8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ex8g"]
+size = Vector2(79, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
+size = Vector2(232, 20)
+
+[node name="Node2D" type="Node2D" unique_id=474948938]
+position = Vector2(-576, -324)
+script = ExtResource("1_5ex8g")
+verb = "Trickshotting"
+difficultyTimes = Array[float]([5.0, 4.0, 3.0])
+
+[node name="Green2" type="ColorRect" parent="." unique_id=291681228]
+offset_left = 114.0
+offset_top = 604.84296
+offset_right = 214.0
+offset_bottom = 611.84296
+rotation = -1.1693707
+color = Color(0, 1, 0, 1)
+
+[node name="Green" type="ColorRect" parent="." unique_id=433426096]
+offset_left = 114.0
+offset_top = 604.84296
+offset_right = 214.0
+offset_bottom = 611.84296
+rotation = -0.87266463
+color = Color(0, 1, 0, 1)
+
+[node name="Bar" type="ColorRect" parent="." unique_id=30693871]
+offset_left = 114.0
+offset_top = 604.84296
+offset_right = 319.0
+offset_bottom = 611.84296
+color = Color(0, 0, 0, 1)
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=678303746]
+position = Vector2(114, 604.84296)
+
+[node name="ColorRect which will be replaced by sprite later" type="ColorRect" parent="Ball" unique_id=1966460879]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=500033415]
+shape = SubResource("CircleShape2D_j5tva")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1655250246]
+position = Vector2(1010, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=451979799]
+position = Vector2(18, 11)
+shape = SubResource("RectangleShape2D_j5tva")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Walls" type="RigidBody2D" parent="." unique_id=527419798]
+position = Vector2(1010, 296)
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_5ex8g")
+gravity_scale = 0.0
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=655633935]
+position = Vector2(-91.5, 20.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_5ex8g")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=667214890]
+position = Vector2(131, -67)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_obibw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

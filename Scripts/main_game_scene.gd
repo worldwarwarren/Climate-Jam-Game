@@ -8,7 +8,8 @@ var score = 0
 var microgames = [
 	preload("res://Scenes/Microgames/PressButton.tscn"),
 	preload("res://Scenes/Microgames/BluePressButton.tscn"),
-	preload("res://Scenes/Microgames/Hunting.tscn")
+	preload("res://Scenes/Microgames/Hunting.tscn"),
+	preload("res://Scenes/Microgames/Trickshot.tscn")
 ]
 #Checks the last microgame that has been played
 #Used later to prevent repeats
