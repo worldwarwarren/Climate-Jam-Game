@@ -12,3 +12,6 @@ GameTimer = NodePath("../GameTimer")
 [node name="GameTimer" type="Timer" parent="." unique_id=1645432464]
 wait_time = 3.0
 one_shot = true
+
+[node name="MicrogameContainer" type="Node2D" parent="." unique_id=272890155]
+position = Vector2(576, 324)

@@ -71,6 +71,7 @@ TimeLeft = NodePath("CanvasLayer/TimeLeft")
 ScoreLabel = NodePath("CanvasLayer/ColorRect/Score")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2120976770]
+layer = 5
 
 [node name="TimeLeft" type="Label" parent="CanvasLayer" unique_id=317539684]
 anchors_preset = 2

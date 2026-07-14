@@ -3,10 +3,12 @@ var score = 0
 
 @onready var Transition = $Transition
 @onready var GameTimer = $GameTimer
+@onready var MicrogameContainer = $MicrogameContainer
 #Lists all of the microgames available
 var microgames = [
 	preload("res://Scenes/Microgames/PressButton.tscn"),
-	preload("res://Scenes/Microgames/BluePressButton.tscn")
+	preload("res://Scenes/Microgames/BluePressButton.tscn"),
+	preload("res://Scenes/Microgames/Hunting.tscn")
 ]
 #Checks the last microgame that has been played
 #Used later to prevent repeats
@@ -52,10 +54,9 @@ func play_microgame():
 		await Transition.transition(microgame.verb, score)
 	if last_microgame != null:
 		last_microgame.queue_free()
-	add_child(microgame)
+	MicrogameContainer.add_child(microgame)
 	print("added microgame")
 	#Position line could be replaced if container is used later on
-	microgame.position = Vector2(576, 324)
 	
 	#Sets the difficulty/speed. Does nothing right now.
 	microgame.start(difficulty)

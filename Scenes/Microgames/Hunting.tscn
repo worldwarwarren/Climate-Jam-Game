@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bd1chlsufxmgy"]
+
+[ext_resource type="Script" uid="uid://b1s8gogqgdp3q" path="res://Scripts/Microgames/hunting.gd" id="1_h05hm"]
+
+[node name="Hunting" type="Node2D" unique_id=1158977354]
+script = ExtResource("1_h05hm")
+verb = "Hunting"
+difficultyTimes = Array[float]([5.0, 4.0, 3.0])
+
+[node name="Animal Container" type="Node2D" parent="." unique_id=708511753]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1252265766]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=851822582]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI" unique_id=2090084626]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_right = 92.0
+offset_bottom = 83.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 90
+text = "Shoot "
+horizontal_alignment = 1
+vertical_alignment = 1

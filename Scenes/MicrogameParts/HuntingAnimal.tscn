@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://depkit7u67o8j"]
+
+[ext_resource type="Script" uid="uid://cx5inojbssher" path="res://Scripts/Microgames/hunting_animal.gd" id="1_cselu"]
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="1_wslxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(123, 116)
+
+[node name="HuntingAnimal" type="Node2D" unique_id=532305525]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_cselu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1044271405]
+texture = ExtResource("1_wslxj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=146647321]
+position = Vector2(0.5, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1752022306]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
