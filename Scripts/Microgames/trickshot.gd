@@ -16,8 +16,8 @@ func _physics_process(delta: float) -> void:
 		if Bar.rotation_degrees >= 0 or Bar.rotation_degrees <= -90:
 			direction *= -1
 	if Input.is_action_just_pressed("ui_accept"):
-		#chosenAngle = abs(Bar.rotation_degrees)
-		chosenAngle = 55
+		chosenAngle = abs(Bar.rotation_degrees)
+		#chosenAngle = 55
 		print(chosenAngle)
 		Ball.velocity.x = SPEED*cos(deg_to_rad(chosenAngle))
 		Ball.velocity.y = -SPEED*sin(deg_to_rad(chosenAngle))
