@@ -4,17 +4,29 @@ var score = 0
 @onready var Transition = $Transition
 @onready var GameTimer = $GameTimer
 @onready var MicrogameContainer = $MicrogameContainer
-#Lists all of the microgames available
-var microgames = [
+
+# List of microgames per difficulty
+var microgamesEasy = [
 	preload("res://Scenes/Microgames/PressButton.tscn"),
 	preload("res://Scenes/Microgames/BluePressButton.tscn"),
-	preload("res://Scenes/Microgames/Hunting.tscn"),
 	preload("res://Scenes/Microgames/Trickshot.tscn")
 ]
+var microgamesMid = [
+	preload("res://Scenes/Microgames/Trickshot.tscn"),
+	preload("res://Scenes/Microgames/Hunting.tscn"),
+	preload("res://Scenes/Microgames/BluePressButton.tscn")
+]
+var microgamesHard = [
+	preload("res://Scenes/Microgames/Trickshot.tscn"),
+	preload("res://Scenes/Microgames/Hunting.tscn")
+]
+
+#Lists all of the microgames available currently
+@onready var microgames = microgamesEasy
 #Checks the last microgame that has been played
 #Used later to prevent repeats
 var last_microgame_scene = null
-@onready var microgames_left = microgames.size() # Tracking microgames that have been used already
+@onready var microgames_left = microgamesEasy.size() # Tracking microgames that have been used already
 var last_microgame = null # For queue freeing the old one during the transition
 # Checking if the player lost or not so they can retry
 var lost = false
@@ -33,8 +45,14 @@ func game_loop():
 #Function to play a microgame
 func play_microgame():
 	if microgames_left == 0:
-		microgames_left = microgames.size()
 		difficulty += 1
+		# Changing the list of current available microgames
+		match difficulty:
+			2:
+				microgames = microgamesMid
+			3:
+				microgames = microgamesHard
+		microgames_left = microgames.size()
 		print("Difficulty " + str(difficulty))
 	#Chooses a random microgame from the microgames list
 	var microgame_scene = microgames.pick_random()
