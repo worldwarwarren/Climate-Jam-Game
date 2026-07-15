@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b3jttnmb8pghu"]
+
+[ext_resource type="Script" uid="uid://uvwy6d3c3146" path="res://Scripts/Microgames/commuting.gd" id="1_4q61q"]
+[ext_resource type="PackedScene" uid="uid://dxl6o08qvsrq0" path="res://Scenes/MicrogameParts/player_car.tscn" id="2_tvghb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
+size = Vector2(400.055, 189.5)
+
+[node name="Commuting" type="Node2D" unique_id=1274320095]
+position = Vector2(-576, -324)
+script = ExtResource("1_4q61q")
+verb = "Commuting"
+difficultyTimes = Array[float]([6.0, 6.0, 0.0])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1423735296]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 376.0
+offset_right = 776.0
+offset_bottom = 648.0
+grow_horizontal = 2
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1716390250]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 566.0
+offset_right = 586.0
+offset_bottom = 648.0
+grow_horizontal = 2
+
+[node name="PlayerCar" parent="." unique_id=1595867947 instance=ExtResource("2_tvghb")]
+position = Vector2(682, 542)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2039844516]
+position = Vector2(576, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=449139833]
+position = Vector2(0, 95.25)
+shape = SubResource("RectangleShape2D_j5tva")
+
+[connection signal="Crashed" from="PlayerCar" to="." method="_on_player_car_crashed"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

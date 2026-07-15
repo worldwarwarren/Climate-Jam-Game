@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cb3vigg37lltg"]
+
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="1_axkkm"]
+[ext_resource type="Script" uid="uid://pdunr828ppko" path="res://Scripts/Microgames/npc_car.gd" id="1_d1wvh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
+size = Vector2(145.07, 180.96)
+
+[node name="NPCCar" type="Area2D" unique_id=1778255642]
+script = ExtResource("1_d1wvh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=854379962]
+rotation = -3.1415925
+scale = Vector2(1.145, 1.425)
+texture = ExtResource("1_axkkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972981704]
+shape = SubResource("RectangleShape2D_j5tva")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

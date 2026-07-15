@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	if gravityActive:
 		Ball.velocity.y += 1400*delta
 	else:
-		Bar.rotation_degrees += 1*direction
+		Bar.rotation_degrees += difficulty*direction
 		if Bar.rotation_degrees >= 0 or Bar.rotation_degrees <= -90:
 			direction *= -1
 	if Input.is_action_just_pressed("ui_accept"):

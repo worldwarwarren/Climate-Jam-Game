@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxl6o08qvsrq0"]
+
+[ext_resource type="Script" uid="uid://b7wgu2mat8cti" path="res://Scripts/Microgames/player_car.gd" id="1_51jpc"]
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="1_sad2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
+size = Vector2(145.07, 168.48001)
+
+[node name="PlayerCar" type="CharacterBody2D" unique_id=1962016870]
+script = ExtResource("1_51jpc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=854379962]
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(1.145, 1.425)
+texture = ExtResource("1_sad2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972981704]
+position = Vector2(0, -6.2400017)
+shape = SubResource("RectangleShape2D_j5tva")

@@ -9,12 +9,14 @@ var score = 0
 var microgamesEasy = [
 	preload("res://Scenes/Microgames/PressButton.tscn"),
 	preload("res://Scenes/Microgames/BluePressButton.tscn"),
-	preload("res://Scenes/Microgames/Trickshot.tscn")
+	preload("res://Scenes/Microgames/Trickshot.tscn"),
+	preload("res://Scenes/Microgames/Commuting.tscn")
 ]
 var microgamesMid = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
-	preload("res://Scenes/Microgames/BluePressButton.tscn")
+	preload("res://Scenes/Microgames/BluePressButton.tscn"),
+	preload("res://Scenes/Microgames/Commuting.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),

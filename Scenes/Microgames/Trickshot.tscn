@@ -20,6 +20,7 @@ size = Vector2(232, 20)
 position = Vector2(-576, -324)
 script = ExtResource("1_5ex8g")
 verb = "Trickshotting"
+difficulty = 1
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
 
 [node name="Green2" type="ColorRect" parent="." unique_id=291681228]
