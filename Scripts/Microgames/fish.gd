@@ -13,17 +13,12 @@ func _ready():
 
 
 func _process(delta):
-	# 0 = fish winning
-	# 1 = player winning
 	var pull_position = lerp(
 		-struggle_distance,
 		struggle_distance,
 		reel_progress
 	)
-
-	# Add natural swimming movement
 	var wiggle = sin(Time.get_ticks_msec() / 150.0) * 10
-
 	var target = start_position + Vector2(
 		pull_position,
 		wiggle

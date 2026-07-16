@@ -10,6 +10,7 @@ radius = 80.0
 [node name="Hosing" type="Node2D" unique_id=1842642551]
 position = Vector2(-576, -324)
 script = ExtResource("1_3qc6i")
+verb = "Hosing"
 difficulty = 1
 difficultyTimes = Array[float]([7.0, 6.0, 6.0])
 
