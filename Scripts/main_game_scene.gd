@@ -23,7 +23,8 @@ var microgamesMid = [
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
-	preload("res://Scenes/Microgames/Fishing.tscn")
+	preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Hosing.tscn")
 ]
 
 #Lists all of the microgames available currently

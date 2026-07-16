@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bfm1uhtmxsdgo"]
+
+[ext_resource type="Script" uid="uid://bqa1g0r3f682k" path="res://Scripts/Microgames/hosing.gd" id="1_3qc6i"]
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_7gvst"]
+[ext_resource type="Script" uid="uid://h18vio7dr06j" path="res://Scripts/Microgames/hose.gd" id="3_6yvqr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
+radius = 80.0
+
+[node name="Hosing" type="Node2D" unique_id=1842642551]
+position = Vector2(-576, -324)
+script = ExtResource("1_3qc6i")
+difficulty = 1
+difficultyTimes = Array[float]([7.0, 6.0, 6.0])
+
+[node name="Wildfire" type="Sprite2D" parent="." unique_id=1018919538]
+modulate = Color(1, 0.5372549, 0, 1)
+position = Vector2(347, 377)
+scale = Vector2(2.28125, 2.28125)
+texture = ExtResource("2_7gvst")
+
+[node name="Water (placeholder)" type="ColorRect" parent="." unique_id=166358855]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 812.0
+offset_top = 422.99994
+offset_right = 896.724
+offset_bottom = 444.99994
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 3.307399
+color = Color(0, 0.46666667, 1, 1)
+
+[node name="Hose (placeholder" type="ColorRect" parent="." unique_id=841292058]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 730.0
+offset_top = 378.0
+offset_right = 953.91003
+offset_bottom = 418.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.15707964
+color = Color(1, 0, 0, 1)
+
+[node name="Hose" type="Area2D" parent="." unique_id=1651858792 node_paths=PackedStringArray("water", "fire", "bar")]
+position = Vector2(944, 452)
+script = ExtResource("3_6yvqr")
+rotationGoal = 50
+water = NodePath("../Water (placeholder)")
+fire = NodePath("../Wildfire")
+bar = NodePath("../ProgressBar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hose" unique_id=1996833941]
+shape = SubResource("CircleShape2D_j5tva")
+
+[node name="ColorRect" type="ColorRect" parent="Hose" unique_id=499529947]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -13.5
+offset_right = 80.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1623839600]
+offset_left = 857.0
+offset_top = 246.0
+offset_right = 1024.0
+offset_bottom = 273.0
+
+[connection signal="Spray" from="Hose" to="." method="_on_hose_spray"]
+[connection signal="input_event" from="Hose" to="Hose" method="_on_input_event"]
