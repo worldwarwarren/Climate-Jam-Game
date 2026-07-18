@@ -7,22 +7,24 @@ var score = 0
 
 # List of microgames per difficulty
 var microgamesEasy = [
-	preload("res://Scenes/Microgames/PressButton.tscn"),
-	preload("res://Scenes/Microgames/BluePressButton.tscn"),
+	#preload("res://Scenes/Microgames/PressButton.tscn"),
+	#preload("res://Scenes/Microgames/BluePressButton.tscn"),
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Commuting.tscn"),
 	preload("res://Scenes/Microgames/Fishing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
-	preload("res://Scenes/Microgames/Consuming.tscn")
+	preload("res://Scenes/Microgames/Consuming.tscn"),
+	preload("res://Scenes/Microgames/Sweating.tscn")
 ]
 var microgamesMid = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
-	preload("res://Scenes/Microgames/BluePressButton.tscn"),
+	#preload("res://Scenes/Microgames/BluePressButton.tscn"),
 	preload("res://Scenes/Microgames/Commuting.tscn"),
 	preload("res://Scenes/Microgames/Fishing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
-	preload("res://Scenes/Microgames/Consuming.tscn")
+	preload("res://Scenes/Microgames/Consuming.tscn"),
+	preload("res://Scenes/Microgames/Sweating.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -30,7 +32,8 @@ var microgamesHard = [
 	preload("res://Scenes/Microgames/Fishing.tscn"),
 	preload("res://Scenes/Microgames/Hosing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
-	preload("res://Scenes/Microgames/Consuming.tscn")
+	preload("res://Scenes/Microgames/Consuming.tscn"),
+	preload("res://Scenes/Microgames/Sweating.tscn")
 ]
 
 #Lists all of the microgames available currently
