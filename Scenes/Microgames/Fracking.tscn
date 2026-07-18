@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bq88hwnqoor7a"]
+
+[ext_resource type="Script" uid="uid://d1cjwftf7nqft" path="res://Scripts/Microgames/fracking.gd" id="1_pntsj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs732"]
+bg_color = Color(0.31473666, 0.3680422, 0.37529555, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfrah"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Fracking" type="Node2D" unique_id=1190040694]
+script = ExtResource("1_pntsj")
+verb = "Fracking"
+difficultyTimes = Array[float]([5.0, 4.0, 3.0])
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1663890005]
+position = Vector2(576, 324)
+
+[node name="CanvasLayer" type="Node2D" parent="." unique_id=1576734492]
+
+[node name="Pipe" type="ProgressBar" parent="CanvasLayer" unique_id=1516000698]
+z_index = 5
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = 24.0
+offset_right = 328.0
+offset_bottom = 73.16667
+grow_vertical = 2
+scale = Vector2(40, 12.799999)
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_bs732")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sfrah")
+max_value = 3.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Arrow" type="Label" parent="CanvasLayer" unique_id=475883290]
+z_index = 5
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1000.0
+offset_top = 187.5
+offset_right = 1040.0
+offset_bottom = 460.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+
+[node name="Dirt" type="ColorRect" parent="CanvasLayer" unique_id=1375070695]
+offset_top = 113.0
+offset_right = 1157.0
+offset_bottom = 652.0
+color = Color(0.4672588, 0.2043857, 0.11752757, 1)
+
+[node name="Green" type="ColorRect" parent="CanvasLayer" unique_id=1439575736]
+offset_left = 1.0
+offset_top = 72.0
+offset_right = 1158.0
+offset_bottom = 119.0
+color = Color(0, 0.5702215, 0.13105804, 1)
+
+[node name="Sky" type="ColorRect" parent="CanvasLayer" unique_id=1239671290]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.279997, 2.8799996)
+color = Color(0.22229332, 0.7617494, 0.99999994, 1)
+
+[node name="PipeOutline" type="ColorRect" parent="CanvasLayer" unique_id=2033770425]
+z_index = 7
+offset_left = 306.0
+offset_top = 24.0
+offset_right = 346.0
+offset_bottom = 64.0
+scale = Vector2(0.5600006, 16)
+color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+
+[node name="PipeOutline2" type="ColorRect" parent="CanvasLayer" unique_id=1010955640]
+z_index = 7
+offset_left = 477.0
+offset_top = 24.0
+offset_right = 517.0
+offset_bottom = 64.0
+scale = Vector2(0.5600006, 16)
+color = Color(0.22670749, 0.22670749, 0.22670746, 1)

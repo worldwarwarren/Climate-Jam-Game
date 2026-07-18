@@ -11,20 +11,23 @@ var microgamesEasy = [
 	preload("res://Scenes/Microgames/BluePressButton.tscn"),
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Commuting.tscn"),
-	preload("res://Scenes/Microgames/Fishing.tscn")
+	preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Fracking.tscn")
 ]
 var microgamesMid = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
 	preload("res://Scenes/Microgames/BluePressButton.tscn"),
 	preload("res://Scenes/Microgames/Commuting.tscn"),
-	preload("res://Scenes/Microgames/Fishing.tscn")
+	preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Fracking.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
 	preload("res://Scenes/Microgames/Fishing.tscn"),
-	preload("res://Scenes/Microgames/Hosing.tscn")
+	preload("res://Scenes/Microgames/Hosing.tscn"),
+	preload("res://Scenes/Microgames/Fracking.tscn")
 ]
 
 #Lists all of the microgames available currently
