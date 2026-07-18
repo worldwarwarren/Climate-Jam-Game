@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhpvhdpxxdcm0"]
+
+[ext_resource type="Script" uid="uid://bse82csqk0hp8" path="res://Scripts/Microgames/product.gd" id="1_ml5a7"]
+
+[node name="Product" type="RigidBody2D" unique_id=706300878 node_paths=PackedStringArray("Hitbox")]
+input_pickable = true
+mass = 0.001
+script = ExtResource("1_ml5a7")
+Hitbox = NodePath("Hitbox")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2034656474]
+debug_color = Color(1, 0, 0.69803923, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=514857677]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1873317983]
+node_a = NodePath("FakeBody")
+
+[node name="FakeBody" type="StaticBody2D" parent="PinJoint2D" unique_id=352385889]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
