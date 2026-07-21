@@ -24,7 +24,8 @@ var microgamesMid = [
 	preload("res://Scenes/Microgames/Fishing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Consuming.tscn"),
-	preload("res://Scenes/Microgames/Sweating.tscn")
+	preload("res://Scenes/Microgames/Sweating.tscn"),
+	preload("res://Scenes/Microgames/Sawing.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -33,7 +34,8 @@ var microgamesHard = [
 	preload("res://Scenes/Microgames/Hosing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Consuming.tscn"),
-	preload("res://Scenes/Microgames/Sweating.tscn")
+	preload("res://Scenes/Microgames/Sweating.tscn"),
+	preload("res://Scenes/Microgames/Sawing.tscn")
 ]
 
 #Lists all of the microgames available currently

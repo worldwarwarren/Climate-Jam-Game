@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://d072c53mtvsgc"]
+
+[ext_resource type="Script" uid="uid://cjgd765gxby5q" path="res://Scripts/Microgames/sawing.gd" id="1_lajl0"]
+[ext_resource type="Script" uid="uid://1pcla8cg1nae" path="res://Scripts/Microgames/saw.gd" id="2_uxl4m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_obibw"]
+font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
+font_size = 49
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tv05v"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovoiv"]
+font_size = 83
+
+[sub_resource type="Animation" id="Animation_0iyes"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top Half:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 242)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Top Half:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lefgm"]
+resource_name = "cut"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top Half:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998, 0.6, 0.79999995, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(576, 242), Vector2(651, 222.45), Vector2(730, 223.995), Vector2(822, 273.99997), Vector2(993, 415), Vector2(1105, 826)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Top Half:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.34906584, 0.6981317, 2.565634]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5nsmj"]
+_data = {
+&"RESET": SubResource("Animation_0iyes"),
+&"cut": SubResource("Animation_lefgm")
+}
+
+[node name="Sawing" type="Node2D" unique_id=1052666267]
+position = Vector2(-576, -324)
+script = ExtResource("1_lajl0")
+verb = "Sawing"
+difficultyTimes = Array[float]([8.0, 8.0, 6.0])
+
+[node name="Stump" type="ColorRect" parent="." unique_id=554830785]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 445.0
+offset_right = 678.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.31314352, 0.16102266, 0.060485467, 1)
+
+[node name="Top Half" type="ColorRect" parent="." unique_id=1940361800]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 242.0
+offset_right = 677.99976
+offset_bottom = 445.0017
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.3137255, 0.16078432, 0.05882353, 1)
+
+[node name="Leaves2" type="ColorRect" parent="Top Half" unique_id=1374579750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -272.5
+offset_right = 219.0
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.54509807, 0, 1)
+
+[node name="Leaves" type="ColorRect" parent="Top Half" unique_id=65477349]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -169.5
+offset_right = 8.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7411765, 0, 1)
+
+[node name="Health" type="Label" parent="." unique_id=1794044691]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 500.0
+offset_right = 760.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Tree Health: 100"
+label_settings = SubResource("LabelSettings_obibw")
+horizontal_alignment = 1
+
+[node name="Instruction 1" type="Label" parent="Health" unique_id=2076689924]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 451.0
+offset_right = 442.0
+offset_bottom = 519.0
+text = "------------------"
+label_settings = SubResource("LabelSettings_j5tva")
+
+[node name="Instruction 2" type="Label" parent="Health" unique_id=487356198]
+layout_mode = 0
+offset_left = -379.0
+offset_top = 172.0
+offset_right = 67.0
+offset_bottom = 252.0
+rotation = -0.18362331
+text = "Use your mouse left and right
+to saw it!"
+label_settings = SubResource("LabelSettings_tv05v")
+
+[node name="Saw" type="Label" parent="." unique_id=446138356]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 146.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "🪚"
+label_settings = SubResource("LabelSettings_ovoiv")
+horizontal_alignment = 1
+script = ExtResource("2_uxl4m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=998091562]
+libraries/ = SubResource("AnimationLibrary_5nsmj")
