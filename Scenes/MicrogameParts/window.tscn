@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c1atm36ndbnup"]
+
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="1_0mfcx"]
+[ext_resource type="Script" uid="uid://ct778iorvf05p" path="res://Scripts/Microgames/window.gd" id="1_vsphd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(129.03618, 125.22459)
+
+[node name="Window1" type="Area2D" unique_id=1003320631]
+scale = Vector2(0.056273483, 0.050774258)
+script = ExtResource("1_vsphd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1214620111]
+texture = ExtResource("1_0mfcx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099632844]
+position = Vector2(-0.4109497, -3.0517578e-05)
+shape = SubResource("RectangleShape2D_g4v7s")

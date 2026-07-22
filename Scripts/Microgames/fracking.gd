@@ -31,7 +31,7 @@ func _process(delta: float):
 		playerdir("Down")
 	
 	
-func _ready():
+func start(speed):
 	dir_list = []
 	for i in 3:
 		dir_list.append(directions.pick_random())

@@ -89,3 +89,4 @@ offset_bottom = 200.0
 text = "0 Items In Cart!"
 label_settings = SubResource("LabelSettings_j5tva")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

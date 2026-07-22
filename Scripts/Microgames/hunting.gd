@@ -8,7 +8,7 @@ var target = 0
 func _ready():
 	start(1.0)
 
-func start(_speed):
+func start(speed):
 	target = randi_range(2, 5)
 	Score_Label.text = ("Shoot " + str(target))
 	print("Target: ", target)

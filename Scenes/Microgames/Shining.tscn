@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cm7hrlmmyhu1j"]
+
+[ext_resource type="Script" uid="uid://capgii5m2v1fs" path="res://Scenes/Microgames/shining.gd" id="1_4yfg1"]
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_2o4kv"]
+[ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
+
+[node name="Shining" type="Node2D" unique_id=137618198]
+position = Vector2(-576, -324.06)
+scale = Vector2(1.075, 1.075)
+script = ExtResource("1_4yfg1")
+verb = "Shining"
+difficultyTimes = Array[float]([6.0])
+
+[node name="Building" type="Sprite2D" parent="." unique_id=135974270]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(533.00006, 359)
+scale = Vector2(4.6800003, 5.4799986)
+texture = ExtResource("2_2o4kv")
+
+[node name="WindowGrid" type="Node2D" parent="." unique_id=1704708425]
+position = Vector2(522.00006, 345)
+scale = Vector2(21.62143, 19.502413)
+
+[node name="Window1" parent="WindowGrid" unique_id=1003320631 instance=ExtResource("3_1gje4")]
+position = Vector2(-7.4925685, -12.357447)
+
+[node name="Window2" parent="WindowGrid" unique_id=1695011090 instance=ExtResource("3_1gje4")]
+position = Vector2(0.6475029, -12.30617)
+
+[node name="Window3" parent="WindowGrid" unique_id=2103844679 instance=ExtResource("3_1gje4")]
+position = Vector2(8.926327, -12.357447)
+
+[node name="Window4" parent="WindowGrid" unique_id=2022506388 instance=ExtResource("3_1gje4")]
+position = Vector2(-7.400068, -4.3584366)
+
+[node name="Window5" parent="WindowGrid" unique_id=409394431 instance=ExtResource("3_1gje4")]
+position = Vector2(0.7862544, -4.3584366)
+
+[node name="Window6" parent="WindowGrid" unique_id=161567016 instance=ExtResource("3_1gje4")]
+position = Vector2(9.1575775, -4.2046094)
+
+[node name="Window7" parent="WindowGrid" unique_id=45687413 instance=ExtResource("3_1gje4")]
+position = Vector2(-7.4925685, 3.4867468)
+
+[node name="Window8" parent="WindowGrid" unique_id=1577084370 instance=ExtResource("3_1gje4")]
+position = Vector2(0.83250475, 3.6405735)
+
+[node name="Window9" parent="WindowGrid" unique_id=1075707210 instance=ExtResource("3_1gje4")]
+position = Vector2(9.1575775, 3.538022)
