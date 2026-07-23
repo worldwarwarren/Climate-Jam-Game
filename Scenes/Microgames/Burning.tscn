@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://od3m317gn40v"]
+
+[ext_resource type="Script" uid="uid://ba4iwlshysqqy" path="res://Scripts/Microgames/burning.gd" id="1_gyur3"]
+[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_7kpb6"]
+[ext_resource type="Script" uid="uid://capjwyj3drky0" path="res://Scripts/Microgames/fire.gd" id="2_uuamf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
+font_size = 29
+
+[node name="Burning" type="Node2D" unique_id=638843341]
+position = Vector2(-576, -324)
+script = ExtResource("1_gyur3")
+verb = "Burning"
+difficultyTimes = Array[float]([5.0, 7.0, 9.0])
+
+[node name="Fire" type="Area2D" parent="." unique_id=703476563]
+position = Vector2(576, 224)
+script = ExtResource("2_uuamf")
+
+[node name="FireSprite" type="Sprite2D" parent="Fire" unique_id=396741546]
+modulate = Color(1, 0.5372549, 0, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7kpb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire" unique_id=159714964]
+scale = Vector2(12.82, 12.82)
+shape = SubResource("RectangleShape2D_j5tva")
+debug_color = Color(0.8666667, 0.42745098, 0, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1459793903]
+offset_left = 411.0
+offset_top = 3.0
+offset_right = 719.0
+offset_bottom = 86.0
+text = "Put Fuel In The Flame!
+Don't Put Water!"
+label_settings = SubResource("LabelSettings_j5tva")
+horizontal_alignment = 1
+
+[connection signal="area_entered" from="Fire" to="Fire" method="_on_area_entered"]

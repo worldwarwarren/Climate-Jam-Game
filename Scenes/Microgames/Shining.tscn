@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cm7hrlmmyhu1j"]
 
-[ext_resource type="Script" uid="uid://capgii5m2v1fs" path="res://Scenes/Microgames/shining.gd" id="1_4yfg1"]
+[ext_resource type="Script" uid="uid://capgii5m2v1fs" path="res://Scripts/Microgames/shining.gd" id="1_4yfg1"]
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_2o4kv"]
 [ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
 
