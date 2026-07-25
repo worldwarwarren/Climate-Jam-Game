@@ -14,6 +14,7 @@ position = Vector2(-576, -324)
 script = ExtResource("1_gyur3")
 verb = "Burning"
 difficultyTimes = Array[float]([5.0, 7.0, 9.0])
+mouse = true
 
 [node name="Fire" type="Area2D" parent="." unique_id=703476563]
 position = Vector2(576, 224)

@@ -13,6 +13,7 @@ script = ExtResource("1_3qc6i")
 verb = "Hosing"
 difficulty = 1
 difficultyTimes = Array[float]([7.0, 6.0, 6.0])
+mouse = true
 
 [node name="Wildfire" type="Sprite2D" parent="." unique_id=1018919538]
 modulate = Color(1, 0.5372549, 0, 1)

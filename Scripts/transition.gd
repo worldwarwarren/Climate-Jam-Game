@@ -7,12 +7,17 @@ extends Node2D
 @export var _animation_player: AnimationPlayer
 @export var TimeLeft: Label
 @export var ScoreLabel: Label
+@export var Controls: Label
 @export_category("External")
 @export var GameTimer: Timer
 
-func transition(verb, score):
+func transition(verb, score, is_mouse):
 	WorldKept.text = "And The World Kept " + verb + "!"
 	ScoreLabel.text = "Score: " + str(score)
+	if is_mouse:
+		Controls.text = "Mouse!"
+	else:
+		Controls.text = "Keyboard!"
 	
 	_animation_player.play("transition1")
 	await _animation_player.animation_finished

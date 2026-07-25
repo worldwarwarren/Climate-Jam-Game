@@ -18,6 +18,7 @@ script = ExtResource("1_ws82e")
 verb = "Sweating"
 time = 5.0
 difficultyTimes = Array[float]([7.0, 6.0, 5.0])
+mouse = true
 
 [node name="Face" type="Label" parent="." unique_id=616697456]
 offset_left = 25.0

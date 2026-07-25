@@ -6,6 +6,7 @@
 script = ExtResource("1_h05hm")
 verb = "Hunting"
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
+mouse = true
 
 [node name="Animal Container" type="Node2D" parent="." unique_id=708511753]
 

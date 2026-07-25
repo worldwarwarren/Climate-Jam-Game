@@ -25,6 +25,7 @@ position = Vector2(-576, -324)
 script = ExtResource("1_7uxgf")
 verb = "Consuming"
 difficultyTimes = Array[float]([10.0, 8.0, 7.0])
+mouse = true
 
 [node name="Shopping Cart" type="AnimatableBody2D" parent="." unique_id=389216221]
 position = Vector2(542, 444)

@@ -83,6 +83,7 @@ position = Vector2(-576, -324)
 script = ExtResource("1_lajl0")
 verb = "Sawing"
 difficultyTimes = Array[float]([8.0, 8.0, 6.0])
+mouse = true
 
 [node name="Stump" type="ColorRect" parent="." unique_id=554830785]
 anchors_preset = 7
