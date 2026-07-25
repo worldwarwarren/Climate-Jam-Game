@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://c4wlc2ybwn6io"]
+
+[ext_resource type="Script" uid="uid://c0qmdwap2cy88" path="res://Scripts/start_menu.gd" id="1_jgtwh"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_m6uer"]
+
+[sub_resource type="Animation" id="Animation_a43kq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/VBoxContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8u0lp"]
+resource_name = "background_loop"
+
+[sub_resource type="Animation" id="Animation_626he"]
+resource_name = "menu_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("CanvasLayer/VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-600, 167), Vector2(20, 167), Vector2(0, 167)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/VBoxContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8u0lp"]
+_data = {
+&"RESET": SubResource("Animation_a43kq"),
+&"background_loop": SubResource("Animation_8u0lp"),
+&"menu_in": SubResource("Animation_626he")
+}
+
+[node name="StartMenu" type="Control" unique_id=1128600503]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jgtwh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1635988053]
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=1462968618]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -407.5
+offset_right = 407.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme = ExtResource("2_m6uer")
+theme_override_font_sizes/font_size = 110
+text = "And The World Kept Spinning"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1499392618]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -195.0
+offset_right = 300.0
+offset_bottom = 255.0
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1283344543]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_m6uer")
+text = "Play"
+alignment = 0
+
+[node name="TutorialButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1625266686]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_m6uer")
+text = "Tutorial"
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1478682949]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_m6uer")
+text = "Options"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=927800208]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_m6uer")
+text = "Quit"
+alignment = 0
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=241124797]
+z_index = -5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.48194373, 0, 0.14759293, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1366335747]
+libraries/ = SubResource("AnimationLibrary_8u0lp")
+
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_button_hovered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_button_unhovered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/TutorialButton" to="." method="_on_button_hovered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/TutorialButton" to="." method="_on_button_unhovered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_button_hovered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_button_unhovered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_button_hovered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_button_unhovered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

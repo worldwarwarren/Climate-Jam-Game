@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://xxyer68fet38"]
+
+[ext_resource type="FontFile" uid="uid://ihmgmtljhaig" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="1_k53qp"]
+
+[resource]
+default_font = ExtResource("1_k53qp")
+default_font_size = 80

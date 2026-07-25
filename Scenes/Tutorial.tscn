@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://yjugydyk1h8u"]
+
+[ext_resource type="Script" uid="uid://b6ehw4bgmfjh3" path="res://Scenes/tutorial.gd" id="1_2o727"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="1_wduq8"]
+
+[node name="Tutorial" type="Control" unique_id=1848302754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2o727")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1914385816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.48235294, 0, 0.14901961, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1784554082]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("1_wduq8")
+text = "You will play a series of short microgames about actions that affect the environment.
+
+Failing a microgame does not end the game.
+You’ll see the message: “And the world kept spinning.” and continue."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1943467195]
+custom_minimum_size = Vector2(190, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -149.0
+offset_right = 257.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_wduq8")
+text = "Back To Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

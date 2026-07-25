@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="ClimateJamGame"
-run/main_scene="uid://vusk435on3e8"
+run/main_scene="uid://c4wlc2ybwn6io"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://y5tia7cq3nht"
 
 [display]
 

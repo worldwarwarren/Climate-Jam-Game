@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://clua8lynptq03"]
+
+[ext_resource type="Script" uid="uid://dmap8om8hdpfi" path="res://Scripts/options.gd" id="1_ww8vx"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_kftxf"]
+[ext_resource type="AudioStream" uid="uid://cuvkjguucuksb" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
+[ext_resource type="Script" uid="uid://b7ory1agqwj1u" path="res://Scripts/volumeslider.gd" id="4_ww8vx"]
+
+[node name="Options" type="Control" unique_id=1689803507]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ww8vx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=432091567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=156433938]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=987810397]
+layout_mode = 2
+theme = ExtResource("2_kftxf")
+text = "Play Sound Effect"
+
+[node name="SFX_Example" type="AudioStreamPlayer2D" parent="HBoxContainer/VBoxContainer/Button" unique_id=1032071574]
+unique_name_in_owner = true
+stream = ExtResource("3_663nc")
+bus = &"SFX"
+
+[node name="ReturnButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=670156912]
+layout_mode = 2
+theme = ExtResource("2_kftxf")
+text = "Return To Main Menu"
+
+[node name="Panel" type="PanelContainer" parent="HBoxContainer" unique_id=1352743204]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel" unique_id=1284419487]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/Panel/VBoxContainer" unique_id=1766948605]
+layout_mode = 2
+theme = ExtResource("2_kftxf")
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="HBoxContainer/Panel/VBoxContainer" unique_id=1729305387]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("4_ww8vx")
+bus_name = "Master"
+
+[node name="Label" type="Label" parent="HBoxContainer/Panel/VBoxContainer" unique_id=348004689]
+layout_mode = 2
+theme = ExtResource("2_kftxf")
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="HBoxContainer/Panel/VBoxContainer" unique_id=1695752539]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("4_ww8vx")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="HBoxContainer/Panel/VBoxContainer" unique_id=346675187]
+layout_mode = 2
+theme = ExtResource("2_kftxf")
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="HBoxContainer/Panel/VBoxContainer" unique_id=878034600]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+script = ExtResource("4_ww8vx")
+bus_name = "SFX"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=785447231]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.48235294, 0, 0.14901961, 1)
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
