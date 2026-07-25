@@ -1,7 +1,7 @@
 extends "res://Scripts/microgame_base.gd"
 
 @onready var CarScene = preload("res://Scenes/MicrogameParts/npc_car.tscn")
-const spawnPos = [470,682]
+const spawnPos = [488,664]
 var crashed = false
 
 func _ready() -> void:

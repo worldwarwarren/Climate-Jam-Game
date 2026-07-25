@@ -12,17 +12,17 @@ script = ExtResource("1_4q61q")
 verb = "Commuting"
 difficultyTimes = Array[float]([6.0, 6.0, 0.0])
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1423735296]
+[node name="Asphalt" type="ColorRect" parent="." unique_id=1423735296]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 376.0
-offset_right = 776.0
+offset_left = 410.0
+offset_right = 742.0001
 offset_bottom = 648.0
 grow_horizontal = 2
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1716390250]
+[node name="Lane" type="ColorRect" parent="." unique_id=1716390250]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -32,7 +32,7 @@ offset_bottom = 648.0
 grow_horizontal = 2
 
 [node name="PlayerCar" parent="." unique_id=1595867947 instance=ExtResource("2_tvghb")]
-position = Vector2(682, 542)
+position = Vector2(664, 542)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2039844516]
 position = Vector2(576, 0)

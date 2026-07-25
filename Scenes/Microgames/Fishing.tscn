@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dw2kwby8fsr8h" path="res://Scripts/Microgames/fishing.gd" id="1_21l5y"]
 [ext_resource type="Script" uid="uid://drb1xi6ksvgpj" path="res://Scripts/Microgames/fishing_pole.gd" id="2_pdlrl"]
+[ext_resource type="Texture2D" uid="uid://dbwmkoxcf4q32" path="res://Assets/Art/Backgrounds/fishingbackground.png" id="2_pgsf6"]
 [ext_resource type="Script" uid="uid://brh32uuayiwvy" path="res://Scripts/Microgames/fish.gd" id="3_6otss"]
 [ext_resource type="Texture2D" uid="uid://b100niovuvir2" path="res://Assets/Art/fishemoji.png" id="3_b0b6p"]
+[ext_resource type="Texture2D" uid="uid://diwfau846welj" path="res://Assets/Art/Backgrounds/water.png" id="3_wkm74"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdlrl"]
 bg_color = Color(0.77254903, 0.09803922, 0.18431373, 0.7490196)
@@ -17,13 +19,23 @@ script = ExtResource("1_21l5y")
 verb = "Fishing"
 difficultyTimes = Array[float]([6.0, 5.0, 3.0])
 
+[node name="Background2" type="Sprite2D" parent="." unique_id=1076629822]
+position = Vector2(576, 324)
+texture = ExtResource("2_pgsf6")
+
 [node name="Background" type="ColorRect" parent="." unique_id=2143342457]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.159998, 8.5199995)
 color = Color(1, 1, 0.6627451, 1)
 
+[node name="Water2" type="Sprite2D" parent="." unique_id=1857254168]
+position = Vector2(576, 501)
+texture = ExtResource("3_wkm74")
+
 [node name="Water" type="ColorRect" parent="." unique_id=515665680]
+visible = false
 z_index = 2
 offset_left = -2.0
 offset_top = 310.0
