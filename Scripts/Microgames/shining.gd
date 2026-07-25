@@ -40,7 +40,7 @@ func connect_windows():
 func _on_window_clicked(index):
 	if showing_sequence:
 		return
-	if index == sequence[player_index]:
+	if player_index < sequence.size() and index == sequence[player_index]:
 		player_index += 1
 		if player_index >= sequence.size():
 			win()
