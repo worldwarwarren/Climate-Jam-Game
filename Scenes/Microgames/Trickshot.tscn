@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bl3mdupe6rf3l"]
 
 [ext_resource type="Script" uid="uid://ca7e5aww7ay7a" path="res://Scripts/Microgames/trickshot.gd" id="1_5ex8g"]
+[ext_resource type="Texture2D" uid="uid://cun1qtd5aot86" path="res://Assets/Art/Sprites/arrow.png" id="2_dfib4"]
+[ext_resource type="Texture2D" uid="uid://cp0r64keqd1q8" path="res://Assets/Art/redcirclefull.png" id="2_fni4r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
 radius = 80.0
@@ -23,20 +25,33 @@ verb = "Trickshotting"
 difficulty = 1
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=339850883]
+position = Vector2(114, 605)
+scale = Vector2(0.714, 0.714)
+texture = ExtResource("2_fni4r")
+
+[node name="Green3" type="ColorRect" parent="." unique_id=1084227651]
+offset_left = 111.000015
+offset_top = 602.99994
+offset_right = 211.51466
+offset_bottom = 615.52655
+rotation = -1.0473211
+color = Color(0, 1, 0, 1)
+
 [node name="Green2" type="ColorRect" parent="." unique_id=291681228]
 offset_left = 114.0
 offset_top = 604.84296
-offset_right = 214.0
-offset_bottom = 611.84296
+offset_right = 214.27127
+offset_bottom = 613.65967
 rotation = -1.1693707
 color = Color(0, 1, 0, 1)
 
 [node name="Green" type="ColorRect" parent="." unique_id=433426096]
-offset_left = 114.0
-offset_top = 604.84296
-offset_right = 214.0
-offset_bottom = 611.84296
-rotation = -0.87266463
+offset_left = 111.34765
+offset_top = 602.84424
+offset_right = 212.23613
+offset_bottom = 613.16534
+rotation = -0.9250245
 color = Color(0, 1, 0, 1)
 
 [node name="Bar" type="ColorRect" parent="." unique_id=30693871]
@@ -45,6 +60,10 @@ offset_top = 604.84296
 offset_right = 319.0
 offset_bottom = 611.84296
 color = Color(0, 0, 0, 1)
+
+[node name="Arrow" type="Sprite2D" parent="Bar" unique_id=1083957729]
+position = Vector2(102.524994, 3.7120361)
+texture = ExtResource("2_dfib4")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=678303746]
 position = Vector2(114, 604.84296)

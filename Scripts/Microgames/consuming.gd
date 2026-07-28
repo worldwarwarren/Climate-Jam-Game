@@ -36,6 +36,8 @@ func _process(delta: float) -> void:
 	var item_count = DetectionBox.get_overlapping_bodies().size()
 	$Label.text = str(item_count) + " Items In Cart!"
 	if item_count == 4:
+		$Label.add_theme_color_override("font_color",Color(0,1,0,1))
 		did_win = true
 	else:
+		$Label.add_theme_color_override("font_color",Color(1,0,0,1))
 		did_win = false

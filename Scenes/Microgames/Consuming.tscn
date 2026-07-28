@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://c2ogiv2u2c4ix"]
 
 [ext_resource type="Script" uid="uid://duxwq51gwwaig" path="res://Scripts/Microgames/consuming.gd" id="1_7uxgf"]
+[ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
 size = Vector2(10, 160.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovoiv"]
-size = Vector2(310, 19)
+size = Vector2(297, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
 radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
+size = Vector2(265, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6k1i"]
 size = Vector2(290, 158)
@@ -18,7 +22,9 @@ size = Vector2(290, 158)
 size = Vector2(1496, 80)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
-font_size = 74
+font = ExtResource("2_1wh4r")
+font_size = 112
+font_color = Color(1, 0, 0, 1)
 
 [node name="Consuming" type="Node2D" unique_id=1155202526]
 position = Vector2(-576, -324)
@@ -31,7 +37,8 @@ mouse = true
 position = Vector2(542, 444)
 
 [node name="Left" type="CollisionShape2D" parent="Shopping Cart" unique_id=864986887]
-position = Vector2(-150, -34.875)
+position = Vector2(-150.00002, -33.000008)
+rotation = -0.16535097
 shape = SubResource("RectangleShape2D_obibw")
 
 [node name="Right" type="CollisionShape2D" parent="Shopping Cart" unique_id=1954609195]
@@ -40,7 +47,7 @@ rotation = 0.10471976
 shape = SubResource("RectangleShape2D_obibw")
 
 [node name="Bottom" type="CollisionShape2D" parent="Shopping Cart" unique_id=1465551291]
-position = Vector2(0, 54.5)
+position = Vector2(6.5, 54.5)
 shape = SubResource("RectangleShape2D_ovoiv")
 
 [node name="Wheel1" type="CollisionShape2D" parent="Shopping Cart" unique_id=1315416636]
@@ -51,10 +58,14 @@ shape = SubResource("CircleShape2D_j5tva")
 position = Vector2(122, 104)
 shape = SubResource("CircleShape2D_j5tva")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Cart" unique_id=454670237]
+position = Vector2(3.5, 74)
+shape = SubResource("RectangleShape2D_j5tva")
+
 [node name="DetectionBox" type="Area2D" parent="Shopping Cart" unique_id=1836848583]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Cart/DetectionBox" unique_id=328459825]
-position = Vector2(1, -35)
+position = Vector2(4, -34)
 shape = SubResource("RectangleShape2D_u6k1i")
 debug_color = Color(0, 1, 0, 0.41960785)
 
