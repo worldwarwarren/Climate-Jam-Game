@@ -21,8 +21,6 @@ func _process(delta: float) -> void:
 		takingInput = false
 		if water.size.x <= 500: # Placeholder before we get actual assets
 			water.size.x += 10
-		else:
-			fire.self_modulate.a -= 0.05
 		
 	
 
