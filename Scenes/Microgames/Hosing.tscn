@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqa1g0r3f682k" path="res://Scripts/Microgames/hosing.gd" id="1_3qc6i"]
 [ext_resource type="Texture2D" uid="uid://cea1stw776u5d" path="res://Assets/Art/Backgrounds/wildfirebackground.png" id="2_6yvqr"]
 [ext_resource type="Script" uid="uid://h18vio7dr06j" path="res://Scripts/Microgames/hose.gd" id="3_6yvqr"]
+[ext_resource type="Texture2D" uid="uid://qnisbxi7quq8" path="res://Assets/Art/circle.png" id="4_qhhoe"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_vuc4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
@@ -63,6 +64,7 @@ bar = NodePath("../ProgressBar")
 shape = SubResource("CircleShape2D_j5tva")
 
 [node name="ColorRect" type="ColorRect" parent="Hose" unique_id=499529947]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -75,6 +77,11 @@ offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.44755095, 0.44755095, 0.44755095, 1)
+
+[node name="Circle" type="Sprite2D" parent="Hose" unique_id=978684830]
+position = Vector2(0, 2)
+scale = Vector2(0.32000306, 0.32000306)
+texture = ExtResource("4_qhhoe")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1623839600]
 offset_left = 857.0
