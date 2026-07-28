@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmap8om8hdpfi" path="res://Scripts/options.gd" id="1_ww8vx"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_kftxf"]
-[ext_resource type="AudioStream" uid="uid://cuvkjguucuksb" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
+[ext_resource type="AudioStream" uid="uid://cankit0rct55i" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
 [ext_resource type="Script" uid="uid://b7ory1agqwj1u" path="res://Scripts/volumeslider.gd" id="4_ww8vx"]
 
 [node name="Options" type="Control" unique_id=1689803507]
@@ -94,7 +94,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.48235294, 0, 0.14901961, 1)
+color = Color(0.4862745, 0.08627451, 0.57254905, 1)
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

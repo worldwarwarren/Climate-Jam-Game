@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0qmdwap2cy88" path="res://Scripts/start_menu.gd" id="1_jgtwh"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_m6uer"]
+[ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="3_m6uer"]
 
 [sub_resource type="Animation" id="Animation_a43kq"]
 length = 0.001
@@ -132,7 +133,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.48194373, 0, 0.14759293, 1)
+color = Color(0.48784655, 0.085692875, 0.57393557, 1)
+
+[node name="Globe" parent="CanvasLayer" unique_id=1869868369 instance=ExtResource("3_m6uer")]
+offset_left = 746.0
+offset_top = 347.0
+offset_right = 746.0
+offset_bottom = 347.0
+scale = Vector2(2.224246, 2.224246)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1366335747]
 libraries/ = SubResource("AnimationLibrary_8u0lp")

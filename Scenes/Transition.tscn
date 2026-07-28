@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://rvxg5gqb5ck7"]
 
 [ext_resource type="Script" uid="uid://5126wponcipe" path="res://Scripts/transition.gd" id="1_ml2rw"]
-[ext_resource type="FontFile" uid="uid://b0goh34evqkoy" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="2_1l5q3"]
-[ext_resource type="FontFile" uid="uid://1b5o0geh4nvt" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_mh0y2"]
+[ext_resource type="FontFile" uid="uid://drmkddkxuo5a7" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="2_1l5q3"]
+[ext_resource type="FontFile" uid="uid://cmk2nyqeb7ska" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_mh0y2"]
+[ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="4_mh0y2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_obibw"]
 font_size = 76
@@ -157,6 +158,21 @@ text = "Keyboard!"
 label_settings = SubResource("LabelSettings_5f4v5")
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Globe" parent="CanvasLayer/ColorRect" unique_id=876054714 instance=ExtResource("4_mh0y2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.00024414063
+offset_top = -209.0
+offset_right = 0.00024414063
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.76, 0.76)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1485847055]
 libraries/ = SubResource("AnimationLibrary_rr8bd")
