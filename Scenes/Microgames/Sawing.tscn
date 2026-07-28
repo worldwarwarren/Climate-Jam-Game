@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://d072c53mtvsgc"]
 
 [ext_resource type="Script" uid="uid://cjgd765gxby5q" path="res://Scripts/Microgames/sawing.gd" id="1_lajl0"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_fynpr"]
 [ext_resource type="Script" uid="uid://1pcla8cg1nae" path="res://Scripts/Microgames/saw.gd" id="2_uxl4m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_obibw"]
-font_size = 33
+font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
-font_size = 49
+font_size = 60
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tv05v"]
-font_size = 26
+font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ovoiv"]
@@ -151,6 +152,8 @@ offset_left = 500.0
 offset_right = 760.0
 offset_bottom = 46.0
 grow_horizontal = 2
+theme = ExtResource("2_fynpr")
+theme_override_font_sizes/font_size = 60
 text = "Tree Health: 100"
 label_settings = SubResource("LabelSettings_obibw")
 horizontal_alignment = 1
@@ -166,10 +169,10 @@ label_settings = SubResource("LabelSettings_j5tva")
 
 [node name="Instruction 2" type="Label" parent="Health" unique_id=487356198]
 layout_mode = 0
-offset_left = -379.0
-offset_top = 172.0
-offset_right = 67.0
-offset_bottom = 252.0
+offset_left = -467.00003
+offset_top = 188.0
+offset_right = 60.99997
+offset_bottom = 268.0
 rotation = -0.18362331
 text = "Use your mouse left and right
 to saw it!"

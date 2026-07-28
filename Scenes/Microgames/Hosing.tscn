@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bfm1uhtmxsdgo"]
 
 [ext_resource type="Script" uid="uid://bqa1g0r3f682k" path="res://Scripts/Microgames/hosing.gd" id="1_3qc6i"]
-[ext_resource type="Texture2D" uid="uid://bna6bu0i3w5fx" path="res://Assets/Art/Backgrounds/wildfirebackground.png" id="2_6yvqr"]
+[ext_resource type="Texture2D" uid="uid://cea1stw776u5d" path="res://Assets/Art/Backgrounds/wildfirebackground.png" id="2_6yvqr"]
 [ext_resource type="Script" uid="uid://h18vio7dr06j" path="res://Scripts/Microgames/hose.gd" id="3_6yvqr"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_vuc4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
 radius = 80.0
@@ -73,13 +74,22 @@ offset_right = 80.0
 offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.44755095, 0.44755095, 0.44755095, 1)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1623839600]
 offset_left = 857.0
 offset_top = 345.0
 offset_right = 1024.0
 offset_bottom = 372.0
+
+[node name="Label" type="Label" parent="." unique_id=2011706867]
+offset_left = 378.0
+offset_top = 572.0
+offset_right = 833.0
+offset_bottom = 622.0
+theme = ExtResource("4_vuc4w")
+text = "SPIN THE WHEEL"
+horizontal_alignment = 1
 
 [connection signal="Spray" from="Hose" to="." method="_on_hose_spray"]
 [connection signal="input_event" from="Hose" to="Hose" method="_on_input_event"]

@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bmxp1b3kjf78y"]
 
 [ext_resource type="Script" uid="uid://i4a2g1ry62q8" path="res://Scripts/Microgames/sweating.gd" id="1_ws82e"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_fi28j"]
 [ext_resource type="Script" uid="uid://x0bn1xj2403w" path="res://Scripts/Microgames/towel.gd" id="2_wk7ad"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
 font_size = 816
 
 [sub_resource type="LabelSettings" id="LabelSettings_obibw"]
-font_size = 39
+font_size = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
 size = Vector2(100, 140)
@@ -37,6 +38,7 @@ offset_top = 22.0
 offset_right = 754.0
 offset_bottom = 76.0
 grow_horizontal = 2
+theme = ExtResource("2_fi28j")
 text = "Wipe Off The Sweat!"
 label_settings = SubResource("LabelSettings_obibw")
 horizontal_alignment = 1

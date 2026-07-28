@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dw2kwby8fsr8h" path="res://Scripts/Microgames/fishing.gd" id="1_21l5y"]
 [ext_resource type="Script" uid="uid://drb1xi6ksvgpj" path="res://Scripts/Microgames/fishing_pole.gd" id="2_pdlrl"]
-[ext_resource type="Texture2D" uid="uid://dbwmkoxcf4q32" path="res://Assets/Art/Backgrounds/fishingbackground.png" id="2_pgsf6"]
+[ext_resource type="Texture2D" uid="uid://cskxaeykn7752" path="res://Assets/Art/Backgrounds/fishingbackground.png" id="2_pgsf6"]
 [ext_resource type="Script" uid="uid://brh32uuayiwvy" path="res://Scripts/Microgames/fish.gd" id="3_6otss"]
-[ext_resource type="Texture2D" uid="uid://b100niovuvir2" path="res://Assets/Art/fishemoji.png" id="3_b0b6p"]
-[ext_resource type="Texture2D" uid="uid://diwfau846welj" path="res://Assets/Art/Backgrounds/water.png" id="3_wkm74"]
+[ext_resource type="Texture2D" uid="uid://cyxh1co46b63s" path="res://Assets/Art/fishemoji.png" id="3_b0b6p"]
+[ext_resource type="Texture2D" uid="uid://cblnolv55a3uk" path="res://Assets/Art/Backgrounds/water.png" id="3_wkm74"]
+[ext_resource type="FontFile" uid="uid://drmkddkxuo5a7" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="4_lw62h"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="7_ebjju"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdlrl"]
 bg_color = Color(0.77254903, 0.09803922, 0.18431373, 0.7490196)
@@ -52,6 +54,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 27.0
 grow_horizontal = 2
+theme = ExtResource("7_ebjju")
+theme_override_fonts/font = ExtResource("4_lw62h")
 theme_override_styles/background = SubResource("StyleBoxFlat_pdlrl")
 theme_override_styles/fill = SubResource("StyleBoxFlat_b0b6p")
 
@@ -88,7 +92,6 @@ flip_h = true
 position = Vector2(-226, 0)
 
 [node name="VictoryMessage" type="Node2D" parent="." unique_id=903385655]
-visible = false
 z_index = 7
 position = Vector2(445, 91.00001)
 scale = Vector2(1.2861605, 1.2861605)
@@ -109,5 +112,6 @@ offset_top = -1.8805201
 offset_right = 547.656
 offset_bottom = 122.11948
 scale = Vector2(0.3476323, 0.3476323)
-theme_override_font_sizes/font_size = 90
+theme = ExtResource("7_ebjju")
+theme_override_font_sizes/font_size = 125
 text = "Fish Caught!"

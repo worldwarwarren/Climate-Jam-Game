@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://ba4iwlshysqqy" path="res://Scripts/Microgames/burning.gd" id="1_gyur3"]
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_7kpb6"]
 [ext_resource type="Script" uid="uid://capjwyj3drky0" path="res://Scripts/Microgames/fire.gd" id="2_uuamf"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_1bee7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
-font_size = 29
+font_size = 60
 
 [node name="Burning" type="Node2D" unique_id=638843341]
 position = Vector2(-576, -324)
@@ -31,10 +32,12 @@ shape = SubResource("RectangleShape2D_j5tva")
 debug_color = Color(0.8666667, 0.42745098, 0, 0.41960785)
 
 [node name="Label" type="Label" parent="." unique_id=1459793903]
-offset_left = 411.0
-offset_top = 3.0
-offset_right = 719.0
-offset_bottom = 86.0
+offset_left = 339.0
+offset_top = 5.0
+offset_right = 812.0
+offset_bottom = 88.0
+theme = ExtResource("4_1bee7")
+theme_override_font_sizes/font_size = 30
 text = "Put Fuel In The Flame!
 Don't Put Water!"
 label_settings = SubResource("LabelSettings_j5tva")

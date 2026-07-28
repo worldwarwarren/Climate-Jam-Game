@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://capgii5m2v1fs" path="res://Scripts/Microgames/shining.gd" id="1_4yfg1"]
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_2o4kv"]
 [ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_ydmve"]
 
 [node name="Shining" type="Node2D" unique_id=137618198]
 position = Vector2(-576, -324.06)
@@ -48,3 +49,14 @@ position = Vector2(0.83250475, 3.6405735)
 
 [node name="Window9" parent="WindowGrid" unique_id=1075707210 instance=ExtResource("3_1gje4")]
 position = Vector2(9.1575775, 3.538022)
+
+[node name="Label" type="Label" parent="." unique_id=1191269753]
+offset_left = -5.581395
+offset_top = 229.82324
+offset_right = 234.41861
+offset_bottom = 385.82324
+theme = ExtResource("4_ydmve")
+text = "FOLLOW
+THE
+PATTERN"
+horizontal_alignment = 1
