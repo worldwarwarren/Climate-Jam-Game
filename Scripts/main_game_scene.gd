@@ -9,14 +9,14 @@ var score = 0
 var microgamesEasy = [
 	#preload("res://Scenes/Microgames/PressButton.tscn"),
 	#preload("res://Scenes/Microgames/BluePressButton.tscn"),
-	#preload("res://Scenes/Microgames/Trickshot.tscn"),
+	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Commuting.tscn"),
-	#preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Fishing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
 	#preload("res://Scenes/Microgames/Consuming.tscn"),
-	#preload("res://Scenes/Microgames/Sweating.tscn"),
-	#preload("res://Scenes/Microgames/Shining.tscn"),
-	#preload("res://Scenes/Microgames/Burning.tscn")
+	preload("res://Scenes/Microgames/Sweating.tscn"),
+	preload("res://Scenes/Microgames/Shining.tscn"),
+	preload("res://Scenes/Microgames/Burning.tscn")
 ]
 var microgamesMid = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),

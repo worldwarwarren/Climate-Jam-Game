@@ -35,7 +35,7 @@ func start(speed):
 	dir_list = []
 	for i in 3:
 		dir_list.append(directions.pick_random())
-	arrow.text = dir_list[0]
+	arrow.set_animation("Arrow")
 	arrowchange(dir_list[0])
 	print(dir_list)
 func playerdir(direction):
@@ -56,15 +56,16 @@ func playerdir(direction):
 	
 func arrowchange(direction):
 	if direction == "Up":
-		arrow.text = "↑"
+		arrow.rotation_degrees = 270
 	elif direction == "Down":
-		arrow.text= "↓"
+		arrow.rotation_degrees = 90
 	elif direction == "Left":
-		arrow.text = "←"
+		arrow.rotation_degrees = 180
 	elif direction == "Right":
-		arrow.text = "→"
+		arrow.rotation_degrees = 0
 	elif direction == "Done":
-		arrow.text = "👍"
+		arrow.rotation_degrees = 0
+		arrow.set_animation("Complete")
 	
 func apply_shake(strength):
 	shake_strength = strength

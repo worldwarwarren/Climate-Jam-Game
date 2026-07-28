@@ -6,9 +6,9 @@ var drag = false
 
 func _ready() -> void:
 	if isFuel:
-		_sprite.text = "🪵"
+		_sprite.set_animation("fuel")
 	else:
-		_sprite.text = "💧"
+		_sprite.set_animation("not_fuel")
 	
 
 func _process(delta: float) -> void:

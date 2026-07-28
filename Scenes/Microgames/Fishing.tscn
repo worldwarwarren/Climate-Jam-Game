@@ -92,6 +92,7 @@ flip_h = true
 position = Vector2(-226, 0)
 
 [node name="VictoryMessage" type="Node2D" parent="." unique_id=903385655]
+visible = false
 z_index = 7
 position = Vector2(445, 91.00001)
 scale = Vector2(1.2861605, 1.2861605)
