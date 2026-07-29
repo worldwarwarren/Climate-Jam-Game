@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var Hitbox: CollisionShape2D
+@export var Sprite: Sprite2D
 var drag = false
 @onready var mouse_pin = $PinJoint2D # There's a pinjoint here that allows for the rigid body to rotate around and be linked to a shapeless static body2d. If the pinjoint is kept on the mouse position, the rigid body can be dragged with it
 @onready var fake_body = $PinJoint2D/FakeBody # This one is a shapeless static body2d used to link with the rigid body

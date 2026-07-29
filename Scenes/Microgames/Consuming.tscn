@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://duxwq51gwwaig" path="res://Scripts/Microgames/consuming.gd" id="1_7uxgf"]
 [ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
+[ext_resource type="Texture2D" uid="uid://4jf0l7ue8vf6" path="res://Assets/Art/shopping cart placeholder.png" id="2_mw21a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
-size = Vector2(10, 160.25)
+size = Vector2(10, 173.79694)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovoiv"]
 size = Vector2(297, 19)
@@ -16,10 +17,10 @@ radius = 20.0
 size = Vector2(265, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6k1i"]
-size = Vector2(290, 158)
+size = Vector2(266.96027, 136.4302)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvcpg"]
-size = Vector2(1496, 80)
+size = Vector2(1496, 78)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
 font = ExtResource("2_1wh4r")
@@ -37,17 +38,19 @@ mouse = true
 position = Vector2(542, 444)
 
 [node name="Left" type="CollisionShape2D" parent="Shopping Cart" unique_id=864986887]
-position = Vector2(-150.00002, -33.000008)
-rotation = -0.16535097
+position = Vector2(-133.39117, -77.24365)
+rotation = -0.2826431
 shape = SubResource("RectangleShape2D_obibw")
 
 [node name="Right" type="CollisionShape2D" parent="Shopping Cart" unique_id=1954609195]
-position = Vector2(159, -21.505)
-rotation = 0.10471976
+position = Vector2(164.74603, -82.47009)
+rotation = -0.04305373
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_obibw")
 
 [node name="Bottom" type="CollisionShape2D" parent="Shopping Cart" unique_id=1465551291]
-position = Vector2(6.5, 54.5)
+position = Vector2(34, -2.9999995)
+rotation = -0.09477048
 shape = SubResource("RectangleShape2D_ovoiv")
 
 [node name="Wheel1" type="CollisionShape2D" parent="Shopping Cart" unique_id=1315416636]
@@ -65,9 +68,16 @@ shape = SubResource("RectangleShape2D_j5tva")
 [node name="DetectionBox" type="Area2D" parent="Shopping Cart" unique_id=1836848583]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Cart/DetectionBox" unique_id=328459825]
-position = Vector2(4, -34)
+position = Vector2(21.765137, -81.36005)
+rotation = -0.09505826
 shape = SubResource("RectangleShape2D_u6k1i")
 debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Shopping Cart" unique_id=1227429835]
+position = Vector2(-14.999971, -51.999992)
+scale = Vector2(0.8534062, 0.7434531)
+texture = ExtResource("2_mw21a")
+flip_h = true
 
 [node name="Boundaries" type="AnimatableBody2D" parent="." unique_id=1501564094]
 position = Vector2(576, 608)
@@ -83,7 +93,7 @@ shape = SubResource("RectangleShape2D_pvcpg")
 debug_color = Color(1, 1, 0, 0.41960785)
 
 [node name="Wall2" type="CollisionShape2D" parent="Boundaries" unique_id=1228862531]
-position = Vector2(616, -155)
+position = Vector2(617, -155)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_pvcpg")
 debug_color = Color(1, 1, 0, 0.41960785)
@@ -102,3 +112,10 @@ text = "0 Items In Cart!"
 label_settings = SubResource("LabelSettings_j5tva")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Floor placeholder" type="ColorRect" parent="." unique_id=468942937]
+offset_left = -80.0
+offset_top = 568.0
+offset_right = 1295.0
+offset_bottom = 652.0
+color = Color(1, 1, 0.6745098, 1)

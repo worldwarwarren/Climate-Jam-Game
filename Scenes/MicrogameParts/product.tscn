@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bse82csqk0hp8" path="res://Scripts/Microgames/product.gd" id="1_ml5a7"]
 
-[node name="Product" type="RigidBody2D" unique_id=706300878 node_paths=PackedStringArray("Hitbox")]
+[node name="Product" type="RigidBody2D" unique_id=706300878 node_paths=PackedStringArray("Hitbox", "Sprite")]
 input_pickable = true
 mass = 0.001
 script = ExtResource("1_ml5a7")
 Hitbox = NodePath("Hitbox")
+Sprite = NodePath("Sprite2D")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2034656474]
 debug_color = Color(1, 0, 0.69803923, 0.41960785)
