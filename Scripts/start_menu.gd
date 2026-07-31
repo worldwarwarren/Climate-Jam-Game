@@ -3,6 +3,7 @@ extends Control
 
 
 func _ready():
+	Settings._loadSettings()
 	$AnimationPlayer.play("menu_in")
 	for button in buttons:
 		button.mouse_entered.connect(_on_button_hover.bind(button))

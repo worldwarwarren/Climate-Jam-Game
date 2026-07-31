@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmap8om8hdpfi" path="res://Scripts/options.gd" id="1_ww8vx"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_kftxf"]
-[ext_resource type="AudioStream" uid="uid://cankit0rct55i" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
+[ext_resource type="AudioStream" uid="uid://cjt2mryicp34" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
 [ext_resource type="Script" uid="uid://b7ory1agqwj1u" path="res://Scripts/volumeslider.gd" id="4_ww8vx"]
 
 [node name="Options" type="Control" unique_id=1689803507]

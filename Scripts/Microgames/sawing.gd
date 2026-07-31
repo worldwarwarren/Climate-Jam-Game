@@ -7,7 +7,7 @@ extends "res://Scripts/microgame_base.gd"
 const cut_range_y = [400,600]
 const cut_range_x = [570,680]
 var goal_x = 0 # 0 is left, 1 is right
-var tree_health = 35
+var tree_health = 30
 
 func _process(delta: float) -> void:
 	if tree_health > 0:
