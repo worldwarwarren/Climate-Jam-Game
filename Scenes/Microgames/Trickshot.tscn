@@ -24,6 +24,7 @@ script = ExtResource("1_5ex8g")
 verb = "Trickshotting"
 difficulty = 1
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
+control_type = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=339850883]
 position = Vector2(114, 605)

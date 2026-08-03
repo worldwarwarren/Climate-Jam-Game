@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://rvxg5gqb5ck7"]
 
 [ext_resource type="Script" uid="uid://5126wponcipe" path="res://Scripts/transition.gd" id="1_ml2rw"]
-[ext_resource type="FontFile" uid="uid://drmkddkxuo5a7" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="2_1l5q3"]
+[ext_resource type="FontFile" uid="uid://d0s12c8j7p8ow" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="2_1l5q3"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_5f4v5"]
-[ext_resource type="FontFile" uid="uid://cmk2nyqeb7ska" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_mh0y2"]
+[ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_mh0y2"]
 [ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="4_mh0y2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_obibw"]
 font_size = 140
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
 font = ExtResource("2_1l5q3")
@@ -88,9 +90,9 @@ layer = 5
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
+offset_left = 17.0
 offset_top = -105.0
-offset_right = 63.0
+offset_right = 78.0
 grow_vertical = 0
 theme = ExtResource("2_5f4v5")
 text = "3"

@@ -6,7 +6,7 @@ signal lost
 @export var difficulty: int # The actual difficulty, used for changing stuff that isn't time
 @export var time: float # Time for the ingame timer
 @export var difficultyTimes: Array[float] # Times that determine the time based on the difficulty
-@export var mouse: bool
+@export var control_type: int # 0 is mouse, 1 is arrows, 2 is spacebar
 
 var did_win = false
 

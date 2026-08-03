@@ -11,6 +11,7 @@ position = Vector2(-576, -324)
 script = ExtResource("1_4q61q")
 verb = "Commuting"
 difficultyTimes = Array[float]([6.0, 6.0, 0.0])
+control_type = 1
 
 [node name="Asphalt" type="ColorRect" parent="." unique_id=1423735296]
 anchors_preset = 5

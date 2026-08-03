@@ -11,17 +11,22 @@ extends Node2D
 @export_category("External")
 @export var GameTimer: Timer
 
-func transition(verb, score, is_mouse):
+func transition(verb, score, controlType):
 	WorldKept.text = "And The World Kept " + verb + "!"
 	ScoreLabel.text = "Score: " + str(score)
-	if is_mouse:
-		Controls.text = "Mouse!"
-	else:
-		Controls.text = "Keyboard!"
+	match controlType:
+		0:
+			Controls.text = "Mouse!"
+		1:
+			Controls.text = "Arrow Keys!"
+		2:
+			Controls.text = "Spacebar!"
 	
 	_animation_player.play("transition1")
 	await _animation_player.animation_finished
 	_animation_player.play("transition2") # so that the stuff doesn't load until it can be visible
 
 func _process(delta: float) -> void:
-	TimeLeft.text = str(ceili(GameTimer.time_left)) + "!"
+	TimeLeft.text = str(ceili(GameTimer.time_left))
+	if ceili(GameTimer.time_left) <= 3:
+		TimeLeft.text = str(ceili(GameTimer.time_left)) + "!"

@@ -88,9 +88,9 @@ func play_microgame():
 	var microgame = microgame_scene.instantiate()
 	# Transition
 	if lost:
-		await Transition.transition("Spinning", score, microgame.mouse)
+		await Transition.transition("Spinning", score, microgame.control_type)
 	else:
-		await Transition.transition(microgame.verb, score, microgame.mouse)
+		await Transition.transition(microgame.verb, score, microgame.control_type)
 	if last_microgame != null:
 		last_microgame.queue_free()
 	MicrogameContainer.add_child(microgame)

@@ -7,6 +7,10 @@ const y_range = [275,450]
 var total_drops = 0
 
 func _ready() -> void:
+	if difficulty > 1:
+		$SweatTimer.wait_time = 0.23
+	if difficulty > 2:
+		$SweatTimer.wait_time = 0.21
 	$MainTimer.start(time-0.5)
 
 func _process(delta: float) -> void:

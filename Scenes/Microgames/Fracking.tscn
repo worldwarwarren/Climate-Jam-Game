@@ -33,6 +33,7 @@ animations = [{
 script = ExtResource("1_pntsj")
 verb = "Fracking"
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
+control_type = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1663890005]
 position = Vector2(576, 324)
