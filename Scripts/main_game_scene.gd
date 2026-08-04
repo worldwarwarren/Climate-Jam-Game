@@ -52,6 +52,8 @@ var last_microgame = null # For queue freeing the old one during the transition
 var lost = false
 # Difficulty
 var difficulty = 1
+# Checking if difficulty has changed
+var new_diff = false
 
 func _ready():
 	game_loop()
@@ -66,6 +68,7 @@ func game_loop():
 func play_microgame():
 	if (microgames_left == 0):
 		difficulty += 1
+		new_diff = true
 		# Changing the list of current available microgames
 		match difficulty:
 			2:
@@ -88,9 +91,10 @@ func play_microgame():
 	var microgame = microgame_scene.instantiate()
 	# Transition
 	if lost:
-		await Transition.transition("Spinning", score, microgame.control_type)
+		await Transition.transition("Spinning", score, microgame.control_type, new_diff)
 	else:
-		await Transition.transition(microgame.verb, score, microgame.control_type)
+		await Transition.transition(microgame.verb, score, microgame.control_type, new_diff)
+	new_diff = false
 	if last_microgame != null:
 		last_microgame.queue_free()
 	MicrogameContainer.add_child(microgame)

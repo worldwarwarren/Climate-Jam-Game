@@ -2,6 +2,29 @@
 
 [ext_resource type="Script" uid="uid://uvwy6d3c3146" path="res://Scripts/Microgames/commuting.gd" id="1_4q61q"]
 [ext_resource type="PackedScene" uid="uid://dxl6o08qvsrq0" path="res://Scenes/MicrogameParts/player_car.tscn" id="2_tvghb"]
+[ext_resource type="Texture2D" uid="uid://2c5amlbo4q74" path="res://Assets/Art/Backgrounds/road.png" id="2_wdfwy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt841"]
+atlas = ExtResource("2_wdfwy")
+region = Rect2(20, 0, 20, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d8ha"]
+atlas = ExtResource("2_wdfwy")
+region = Rect2(0, 0, 20, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5tva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt841")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d8ha")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
 size = Vector2(400.055, 189.5)
@@ -13,6 +36,11 @@ verb = "Commuting"
 difficultyTimes = Array[float]([6.0, 6.0, 0.0])
 control_type = 1
 
+[node name="Grass" type="ColorRect" parent="." unique_id=1564864364]
+offset_right = 1273.0
+offset_bottom = 734.0
+color = Color(0.73793167, 1, 0.71363616, 1)
+
 [node name="Asphalt" type="ColorRect" parent="." unique_id=1423735296]
 anchors_preset = 5
 anchor_left = 0.5
@@ -23,14 +51,11 @@ offset_bottom = 648.0
 grow_horizontal = 2
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="Lane" type="ColorRect" parent="." unique_id=1716390250]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 566.0
-offset_right = 586.0
-offset_bottom = 648.0
-grow_horizontal = 2
+[node name="Lane" type="AnimatedSprite2D" parent="." unique_id=1142024579]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_j5tva")
+autoplay = "default"
+frame_progress = 0.9819386
 
 [node name="PlayerCar" parent="." unique_id=1595867947 instance=ExtResource("2_tvghb")]
 position = Vector2(664, 542)

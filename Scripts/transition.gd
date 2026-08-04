@@ -11,9 +11,10 @@ extends Node2D
 @export_category("External")
 @export var GameTimer: Timer
 
-func transition(verb, score, controlType):
+func transition(verb, score, controlType, new_diff):
 	WorldKept.text = "And The World Kept " + verb + "!"
 	ScoreLabel.text = "Score: " + str(score)
+	$CanvasLayer/DifficultyChange/Score.text = "Score: " + str(score)
 	match controlType:
 		0:
 			Controls.text = "Mouse!"
@@ -22,6 +23,9 @@ func transition(verb, score, controlType):
 		2:
 			Controls.text = "Spacebar!"
 	
+	if new_diff:
+		_animation_player.play("difficulty_change")
+		await _animation_player.animation_finished
 	_animation_player.play("transition1")
 	await _animation_player.animation_finished
 	_animation_player.play("transition2") # so that the stuff doesn't load until it can be visible
