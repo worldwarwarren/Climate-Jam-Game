@@ -21,6 +21,7 @@ size = Vector2(595, 19)
 size = Vector2(847.41675, 20)
 
 [node name="Node2D" type="Node2D" unique_id=474948938]
+position = Vector2(-576, -324)
 script = ExtResource("1_5ex8g")
 verb = "Trashing"
 difficulty = 1
