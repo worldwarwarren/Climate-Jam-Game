@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ca7e5aww7ay7a" path="res://Scripts/Microgames/trickshot.gd" id="1_5ex8g"]
 [ext_resource type="Texture2D" uid="uid://cun1qtd5aot86" path="res://Assets/Art/Sprites/arrow.png" id="2_dfib4"]
 [ext_resource type="Texture2D" uid="uid://cp0r64keqd1q8" path="res://Assets/Art/redcirclefull.png" id="2_fni4r"]
+[ext_resource type="Texture2D" uid="uid://cktocokxc2ahp" path="res://Assets/Art/Sprites/trashbag.png" id="4_nlhb1"]
+[ext_resource type="Texture2D" uid="uid://dkyri05j24qc0" path="res://Assets/Art/Sprites/trashcan.png" id="4_xe5xh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
 radius = 80.0
@@ -16,50 +18,49 @@ size = Vector2(198, 58)
 size = Vector2(595, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
-size = Vector2(760, 20)
+size = Vector2(847.41675, 20)
 
 [node name="Node2D" type="Node2D" unique_id=474948938]
-position = Vector2(-576, -324)
 script = ExtResource("1_5ex8g")
-verb = "Trickshotting"
+verb = "Trashing"
 difficulty = 1
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
 control_type = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=339850883]
-position = Vector2(114, 605)
-scale = Vector2(0.714, 0.714)
+position = Vector2(42.500008, 606.23376)
+scale = Vector2(0.87188613, 0.87188613)
 texture = ExtResource("2_fni4r")
 
 [node name="Green3" type="ColorRect" parent="." unique_id=1084227651]
-offset_left = 111.000015
-offset_top = 602.99994
-offset_right = 211.51466
-offset_bottom = 615.52655
+offset_left = 17.317009
+offset_top = 626.4167
+offset_right = 169.69781
+offset_bottom = 638.9433
 rotation = -1.0473211
 color = Color(0, 1, 0, 1)
 
 [node name="Green2" type="ColorRect" parent="." unique_id=291681228]
-offset_left = 114.0
-offset_top = 604.84296
-offset_right = 214.27127
-offset_bottom = 613.65967
+offset_left = 20.317001
+offset_top = 628.2597
+offset_right = 171.97673
+offset_bottom = 643.569
 rotation = -1.1693707
 color = Color(0, 1, 0, 1)
 
 [node name="Green" type="ColorRect" parent="." unique_id=433426096]
-offset_left = 111.34765
-offset_top = 602.84424
-offset_right = 212.23613
-offset_bottom = 613.16534
+offset_left = 12.283299
+offset_top = 622.2059
+offset_right = 164.83316
+offset_bottom = 639.2652
 rotation = -0.9250245
 color = Color(0, 1, 0, 1)
 
 [node name="Bar" type="ColorRect" parent="." unique_id=30693871]
-offset_left = 114.0
-offset_top = 604.84296
-offset_right = 319.0
-offset_bottom = 611.84296
+offset_left = 20.317001
+offset_top = 628.2597
+offset_right = 225.317
+offset_bottom = 635.2597
 color = Color(0, 0, 0, 1)
 
 [node name="Arrow" type="Sprite2D" parent="Bar" unique_id=1083957729]
@@ -67,19 +68,18 @@ position = Vector2(102.524994, 3.7120361)
 texture = ExtResource("2_dfib4")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=678303746]
-position = Vector2(114, 604.84296)
+position = Vector2(20.317001, 628.2597)
 
-[node name="ColorRect which will be replaced by sprite later" type="ColorRect" parent="Ball" unique_id=1966460879]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=740992113]
+position = Vector2(2.9329987, -10.093049)
+scale = Vector2(18.625, 18.104166)
+texture = ExtResource("4_nlhb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=500033415]
 shape = SubResource("CircleShape2D_j5tva")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1655250246]
-position = Vector2(1010, 296)
+position = Vector2(916.317, 319.41675)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=451979799]
 position = Vector2(18, 11)
@@ -87,7 +87,7 @@ shape = SubResource("RectangleShape2D_j5tva")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Walls" type="RigidBody2D" parent="." unique_id=527419798]
-position = Vector2(1010, 296)
+position = Vector2(916.317, 319.41675)
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_5ex8g")
 gravity_scale = 0.0
@@ -98,8 +98,20 @@ rotation = -1.5707964
 shape = SubResource("RectangleShape2D_5ex8g")
 
 [node name="Right" type="CollisionShape2D" parent="Walls" unique_id=667214890]
-position = Vector2(131, 197)
+position = Vector2(131, 153.29163)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_obibw")
+
+[node name="ColorRect made to look like background to hide clipping (will be changed later)" type="ColorRect" parent="." unique_id=62993343]
+offset_left = 1049.0
+offset_top = 49.0
+offset_right = 1206.0
+offset_bottom = 909.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="Trashcan" type="Sprite2D" parent="." unique_id=257298198]
+position = Vector2(934.99994, 488.99997)
+scale = Vector2(20.468748, 20.468748)
+texture = ExtResource("4_xe5xh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
