@@ -55,10 +55,10 @@ color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_j5tva")
 autoplay = "default"
-frame_progress = 0.9819386
+frame_progress = 0.31759998
 
 [node name="PlayerCar" parent="." unique_id=1595867947 instance=ExtResource("2_tvghb")]
-position = Vector2(664, 542)
+position = Vector2(664, 535)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2039844516]
 position = Vector2(576, 0)
