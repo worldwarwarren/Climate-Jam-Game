@@ -33,6 +33,7 @@ size = Vector2(400.055, 189.5)
 position = Vector2(-576, -324)
 script = ExtResource("1_4q61q")
 verb = "Commuting"
+difficulty = 2
 difficultyTimes = Array[float]([6.0, 6.0, 7.0])
 control_type = 1
 

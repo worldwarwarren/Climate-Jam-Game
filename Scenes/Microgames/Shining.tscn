@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://capgii5m2v1fs" path="res://Scripts/Microgames/shining.gd" id="1_4yfg1"]
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_2o4kv"]
+[ext_resource type="Texture2D" uid="uid://ddfnxvtg7m1hn" path="res://Assets/Art/Backgrounds/Space.png" id="2_emfh7"]
 [ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_ydmve"]
 
@@ -11,7 +12,10 @@ scale = Vector2(1.075, 1.075)
 script = ExtResource("1_4yfg1")
 verb = "Shining"
 difficultyTimes = Array[float]([6.0])
-mouse = true
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1129219538]
+position = Vector2(576, 324)
+texture = ExtResource("2_emfh7")
 
 [node name="Building" type="Sprite2D" parent="." unique_id=135974270]
 modulate = Color(0, 0, 0, 1)

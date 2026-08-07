@@ -7,13 +7,17 @@ var crashed = false
 func _ready() -> void:
 	spawnCar()
 	did_win = true
-
+	
 func spawnCar():
 	var car = CarScene.instantiate()
 	car.position.y = -175
 	car.position.x = spawnPos.pick_random()
 	car.SPEED = 5
 	add_child(car)
+
+func _process(delta: float) -> void:
+	if difficulty > 1:
+		$Grass.modulate = Color(0.7,0.7,0.7,1)
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:

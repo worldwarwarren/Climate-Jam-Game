@@ -6,6 +6,13 @@ var sequence = []
 var player_index = 0
 var showing_sequence = true
 
+func _process(delta: float) -> void:
+	match difficulty:
+		2:
+			$Sky.modulate = Color(0.3,0.3,0.3)
+		3:
+			$Sky.modulate = Color(0.1,0.1,0.1)
+
 func generate_sequence():
 	sequence.clear()
 	for i in range(3):

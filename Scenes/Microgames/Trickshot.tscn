@@ -28,7 +28,7 @@ difficulty = 1
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
 control_type = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=339850883]
+[node name="Red" type="Sprite2D" parent="." unique_id=339850883]
 position = Vector2(42.500008, 606.23376)
 scale = Vector2(0.87188613, 0.87188613)
 texture = ExtResource("2_fni4r")
@@ -110,9 +110,23 @@ offset_right = 1206.0
 offset_bottom = 909.0
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
+[node name="Trashbag2" type="Sprite2D" parent="." unique_id=1455494143]
+visible = false
+position = Vector2(1127, 587.00006)
+rotation = -0.43608558
+scale = Vector2(25.883146, 25.159348)
+texture = ExtResource("4_nlhb1")
+
 [node name="Trashcan" type="Sprite2D" parent="." unique_id=257298198]
 position = Vector2(934.99994, 488.99997)
 scale = Vector2(20.468748, 20.468748)
 texture = ExtResource("4_xe5xh")
+
+[node name="Trashbag1" type="Sprite2D" parent="." unique_id=1704391017]
+visible = false
+position = Vector2(716.9999, 667)
+rotation = 0.5314082
+scale = Vector2(25.883146, 25.159348)
+texture = ExtResource("4_nlhb1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

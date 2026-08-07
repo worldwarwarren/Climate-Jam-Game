@@ -9,6 +9,10 @@ var direction = -1
 @onready var Ball = $Ball
 
 func _physics_process(delta: float) -> void:
+	if difficulty > 1:
+		$Trashbag1.visible = true
+		if difficulty > 2:
+			$Trashbag2.visible = true
 	if gravityActive:
 		Ball.velocity.y += 1400*delta
 		Ball.rotation_degrees += 5

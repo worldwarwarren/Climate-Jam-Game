@@ -1,7 +1,6 @@
 extends "res://Scripts/microgame_base.gd"
 
 @onready var TopHalf = $"Top Half"
-@onready var Labels = $Health
 @onready var Saw = $Saw
 @onready var _animation_player = $AnimationPlayer
 const cut_range_y = [400,600]
@@ -20,7 +19,9 @@ func _process(delta: float) -> void:
 				tree_health -= 1
 				goal_x = 0
 	else:
-		Labels.visible = false
+		$"Instruction 1".visible = false
+		$"Instruction 2".visible = false
+		$Health.visible = false
 		Saw.visible = false
 		win()
 		_animation_player.play("cut")
