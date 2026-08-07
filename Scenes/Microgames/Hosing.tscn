@@ -1,13 +1,142 @@
 [gd_scene format=3 uid="uid://bfm1uhtmxsdgo"]
 
 [ext_resource type="Script" uid="uid://bqa1g0r3f682k" path="res://Scripts/Microgames/hosing.gd" id="1_3qc6i"]
-[ext_resource type="Texture2D" uid="uid://cea1stw776u5d" path="res://Assets/Art/Backgrounds/wildfirebackground.png" id="2_6yvqr"]
+[ext_resource type="Texture2D" uid="uid://dy34p4mgxg5tc" path="res://Assets/Art/Backgrounds/wildfirebackground.png" id="2_6yvqr"]
 [ext_resource type="Script" uid="uid://h18vio7dr06j" path="res://Scripts/Microgames/hose.gd" id="3_6yvqr"]
 [ext_resource type="Texture2D" uid="uid://qnisbxi7quq8" path="res://Assets/Art/circle.png" id="4_qhhoe"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_vuc4w"]
+[ext_resource type="Texture2D" uid="uid://cqxy4x0twyv1r" path="res://Assets/Art/Sprites/foam.png" id="6_ub1sq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
 radius = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8dgw"]
+atlas = ExtResource("6_ub1sq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_623sj"]
+atlas = ExtResource("6_ub1sq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdub0"]
+atlas = ExtResource("6_ub1sq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52nau"]
+atlas = ExtResource("6_ub1sq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko3ui"]
+atlas = ExtResource("6_ub1sq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5tva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8dgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_623sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdub0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52nau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko3ui")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ub1sq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water (placeholder):size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(84, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720.00006, 492.00003)]
+}
+
+[sub_resource type="Animation" id="Animation_l8dgw"]
+resource_name = "spray"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water (placeholder):size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(84, 22), Vector2(500, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(720.00006, 492.00003), Vector2(311.0001, 427.00003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_623sj"]
+_data = {
+&"RESET": SubResource("Animation_ub1sq"),
+&"spray": SubResource("Animation_l8dgw")
+}
 
 [node name="Hosing" type="Node2D" unique_id=1842642551]
 position = Vector2(-576, -324)
@@ -15,7 +144,6 @@ script = ExtResource("1_3qc6i")
 verb = "Hosing"
 difficulty = 1
 difficultyTimes = Array[float]([7.0, 6.0, 6.0])
-mouse = true
 
 [node name="Wildfire" type="Sprite2D" parent="." unique_id=1018919538]
 modulate = Color(1, 0.5372549, 0, 1)
@@ -30,7 +158,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 812.0
 offset_top = 521.99994
-offset_right = 896.724
+offset_right = 896.0
 offset_bottom = 543.99994
 grow_horizontal = 0
 grow_vertical = 0
@@ -97,6 +225,18 @@ offset_bottom = 622.0
 theme = ExtResource("4_vuc4w")
 text = "SPIN THE WHEEL"
 horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1792728678]
+visible = false
+position = Vector2(720.00006, 492.00003)
+rotation = 0.15219095
+scale = Vector2(3.09375, 3.09375)
+sprite_frames = SubResource("SpriteFrames_j5tva")
+autoplay = "default"
+frame_progress = 0.63449836
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=697146688]
+libraries/ = SubResource("AnimationLibrary_623sj")
 
 [connection signal="Spray" from="Hose" to="." method="_on_hose_spray"]
 [connection signal="input_event" from="Hose" to="Hose" method="_on_input_event"]

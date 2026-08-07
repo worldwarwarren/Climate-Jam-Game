@@ -15,12 +15,9 @@ func _process(delta: float) -> void:
 		look_at(get_global_mouse_position())
 	if !Input.is_anything_pressed() or !takingInput:
 		drag = false
-	print(rotation)
-	if abs(rotation) > rotationGoal:
+	if abs(rotation) > rotationGoal and takingInput:
 		Spray.emit()
 		takingInput = false
-		if water.size.x <= 500: # Placeholder before we get actual assets
-			water.size.x += 10
 		
 	
 

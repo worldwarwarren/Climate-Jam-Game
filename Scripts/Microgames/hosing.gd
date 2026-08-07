@@ -7,4 +7,5 @@ func _ready() -> void:
 
 
 func _on_hose_spray() -> void:
+	$AnimationPlayer.play("spray")
 	win()

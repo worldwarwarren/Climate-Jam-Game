@@ -5,16 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://4jf0l7ue8vf6" path="res://Assets/Art/shopping cart placeholder.png" id="2_mw21a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
-size = Vector2(10, 173.79694)
+size = Vector2(10, 196.4691)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw21a"]
+size = Vector2(10, 139.00035)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovoiv"]
-size = Vector2(297, 19)
+size = Vector2(288.48492, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
-radius = 20.0
+radius = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
-size = Vector2(265, 20)
+size = Vector2(306, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6k1i"]
 size = Vector2(266.96027, 136.4302)
@@ -32,37 +35,43 @@ position = Vector2(-576, -324)
 script = ExtResource("1_7uxgf")
 verb = "Consuming"
 difficultyTimes = Array[float]([10.0, 8.0, 7.0])
-mouse = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227429835]
+z_index = 1
+position = Vector2(527, 392)
+scale = Vector2(0.8534062, 0.7434531)
+texture = ExtResource("2_mw21a")
+flip_h = true
 
 [node name="Shopping Cart" type="AnimatableBody2D" parent="." unique_id=389216221]
 position = Vector2(542, 444)
 
 [node name="Left" type="CollisionShape2D" parent="Shopping Cart" unique_id=864986887]
-position = Vector2(-133.39117, -77.24365)
-rotation = -0.2826431
+position = Vector2(-137.04509, -89.82523)
+rotation = -0.28264305
 shape = SubResource("RectangleShape2D_obibw")
 
 [node name="Right" type="CollisionShape2D" parent="Shopping Cart" unique_id=1954609195]
-position = Vector2(164.74603, -82.47009)
-rotation = -0.04305373
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_obibw")
+position = Vector2(164.91998, -78.43194)
+rotation = -0.04305374
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_mw21a")
 
 [node name="Bottom" type="CollisionShape2D" parent="Shopping Cart" unique_id=1465551291]
-position = Vector2(34, -2.9999995)
+position = Vector2(29.761574, -2.5971146)
 rotation = -0.09477048
 shape = SubResource("RectangleShape2D_ovoiv")
 
 [node name="Wheel1" type="CollisionShape2D" parent="Shopping Cart" unique_id=1315416636]
-position = Vector2(-115, 104)
+position = Vector2(-147, 100)
 shape = SubResource("CircleShape2D_j5tva")
 
 [node name="Wheel2" type="CollisionShape2D" parent="Shopping Cart" unique_id=1151611935]
-position = Vector2(122, 104)
+position = Vector2(137, 102)
 shape = SubResource("CircleShape2D_j5tva")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shopping Cart" unique_id=454670237]
-position = Vector2(3.5, 74)
+position = Vector2(12, 74)
 shape = SubResource("RectangleShape2D_j5tva")
 
 [node name="DetectionBox" type="Area2D" parent="Shopping Cart" unique_id=1836848583]
@@ -72,12 +81,6 @@ position = Vector2(21.765137, -81.36005)
 rotation = -0.09505826
 shape = SubResource("RectangleShape2D_u6k1i")
 debug_color = Color(0, 1, 0, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="Shopping Cart" unique_id=1227429835]
-position = Vector2(-14.999971, -51.999992)
-scale = Vector2(0.8534062, 0.7434531)
-texture = ExtResource("2_mw21a")
-flip_h = true
 
 [node name="Boundaries" type="AnimatableBody2D" parent="." unique_id=1501564094]
 position = Vector2(576, 608)
