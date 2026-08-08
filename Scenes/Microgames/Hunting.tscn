@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b1s8gogqgdp3q" path="res://Scripts/Microgames/hunting.gd" id="1_h05hm"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_lhgtw"]
+[ext_resource type="AudioStream" uid="uid://dvs3ptk0cmlxk" path="res://Assets/Audio/SFX/HuntingGunshot.mp3" id="3_cxsor"]
 
 [node name="Hunting" type="Node2D" unique_id=1158977354]
 script = ExtResource("1_h05hm")
 verb = "Hunting"
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
-mouse = true
 
 [node name="Animal Container" type="Node2D" parent="." unique_id=708511753]
 
@@ -38,3 +38,8 @@ theme_override_font_sizes/font_size = 110
 text = "Shoot "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GunshotSound" type="AudioStreamPlayer" parent="." unique_id=1631632667]
+stream = ExtResource("3_cxsor")
+volume_db = -1.01
+bus = &"SFX"

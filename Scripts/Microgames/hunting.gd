@@ -4,6 +4,7 @@ var target = 0
 @onready var Animal_Scene = preload("res://Scenes/MicrogameParts/HuntingAnimal.tscn")
 @onready var AnimalContainer = $"Animal Container"
 @onready var Score_Label = $CanvasLayer/UI/Label
+@onready var Shot_Sound = $GunshotSound
 
 func _ready():
 	start(1.0)
@@ -25,6 +26,8 @@ func start(speed):
 		print(count)
 
 func _on_animal_clicked():
+	Shot_Sound.set_pitch_scale(randf_range(0.9, 1.4))
+	Shot_Sound.play()
 	hunt_score += 1
 	Score_Label.text = ("Shoot " + str(target - hunt_score) + " more")
 	

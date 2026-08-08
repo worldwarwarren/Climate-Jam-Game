@@ -2,8 +2,21 @@
 
 [ext_resource type="Script" uid="uid://dmap8om8hdpfi" path="res://Scripts/options.gd" id="1_ww8vx"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_kftxf"]
-[ext_resource type="AudioStream" uid="uid://cjt2mryicp34" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
+[ext_resource type="AudioStream" uid="uid://cankit0rct55i" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
 [ext_resource type="Script" uid="uid://b7ory1agqwj1u" path="res://Scripts/volumeslider.gd" id="4_ww8vx"]
+[ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="5_kftxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kftxf"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="Options" type="Control" unique_id=1689803507]
 layout_mode = 3
@@ -22,23 +35,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=156433938]
+[node name="Buttons" type="VBoxContainer" parent="HBoxContainer" unique_id=156433938]
+custom_minimum_size = Vector2(576, 324)
+custom_maximum_size = Vector2(576, -1)
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=987810397]
+[node name="Button" type="Button" parent="HBoxContainer/Buttons" unique_id=987810397]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_kftxf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kftxf")
 text = "Play Sound Effect"
 
-[node name="SFX_Example" type="AudioStreamPlayer2D" parent="HBoxContainer/VBoxContainer/Button" unique_id=1032071574]
+[node name="SFX_Example" type="AudioStreamPlayer2D" parent="HBoxContainer/Buttons/Button" unique_id=1032071574]
 unique_name_in_owner = true
 stream = ExtResource("3_663nc")
 bus = &"SFX"
 
-[node name="ReturnButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=670156912]
+[node name="ReturnButton" type="Button" parent="HBoxContainer/Buttons" unique_id=670156912]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_kftxf")
+theme_override_font_sizes/font_size = 75
 text = "Return To Main Menu"
 
 [node name="Panel" type="PanelContainer" parent="HBoxContainer" unique_id=1352743204]
@@ -96,5 +115,9 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.4862745, 0.08627451, 0.57254905, 1)
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[node name="MenuSelectSound" type="AudioStreamPlayer" parent="." unique_id=1529342826]
+stream = ExtResource("5_kftxf")
+bus = &"SFX"
+
+[connection signal="pressed" from="HBoxContainer/Buttons/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Buttons/ReturnButton" to="." method="_on_return_button_pressed"]

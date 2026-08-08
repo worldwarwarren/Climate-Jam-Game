@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0qmdwap2cy88" path="res://Scripts/start_menu.gd" id="1_jgtwh"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_m6uer"]
 [ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="3_m6uer"]
+[ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="4_a43kq"]
 
 [sub_resource type="Animation" id="Animation_a43kq"]
 length = 0.001
@@ -144,6 +145,13 @@ scale = Vector2(2.224246, 2.224246)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1366335747]
 libraries/ = SubResource("AnimationLibrary_8u0lp")
+
+[node name="MenuSelectSound" type="AudioStreamPlayer" parent="." unique_id=108959011]
+stream = ExtResource("4_a43kq")
+bus = &"SFX"
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="." unique_id=2088941921]
+bus = &"Music"
 
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_button_hovered"]
 [connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_button_unhovered"]

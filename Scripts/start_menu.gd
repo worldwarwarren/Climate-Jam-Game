@@ -1,5 +1,6 @@
 extends Control
 @onready var buttons = $CanvasLayer/VBoxContainer.get_children()
+@onready var SelectSound = $MenuSelectSound
 
 
 func _ready():
@@ -13,6 +14,8 @@ func _ready():
 
 
 func _on_button_hover(button):
+	SelectSound.set_pitch_scale(randf_range(0.9, 1.4))
+	SelectSound.play()
 	var tween = create_tween()
 	tween.tween_property(button, "scale", Vector2(1.2,1.2), 0.15)
 func _on_button_exit(button):
