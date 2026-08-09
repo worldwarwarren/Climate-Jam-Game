@@ -28,7 +28,7 @@ func transition(verb, score, controlType, new_diff,difficulty):
 			Controls.text = "Spacebar!"
 	
 	if new_diff:
-		
+		IntermissionSound.play() #REPLACE W/ DIFFICULTY UP SOUND
 		_animation_player.play("difficulty_change")
 		await _animation_player.animation_finished
 	IntermissionSound.play()

@@ -29,6 +29,7 @@ func show_sequence():
 	
 func flash_window(index):
 	var window = windows[index]
+	window.sound.play()
 	window.set_on(true)
 	await get_tree().create_timer(0.3).timeout
 	window.set_on(false)
@@ -53,6 +54,7 @@ func _on_window_clicked(index):
 			win()
 			$Label.visible = false
 			for window in windows:
+				window.sound.play()
 				window.set_on(true)
 				await get_tree().create_timer(0.1).timeout
 	else:

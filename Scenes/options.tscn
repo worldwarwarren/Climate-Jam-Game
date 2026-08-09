@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cankit0rct55i" path="res://Assets/Audio/SFX/samplesoundeffect.wav" id="3_663nc"]
 [ext_resource type="Script" uid="uid://b7ory1agqwj1u" path="res://Scripts/volumeslider.gd" id="4_ww8vx"]
 [ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="5_kftxf"]
+[ext_resource type="AudioStream" uid="uid://ddmmhvystb3q4" path="res://Assets/Audio/Music/AlternateMainTheme.mp3" id="6_663nc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kftxf"]
 content_margin_left = 10.0
@@ -118,6 +119,11 @@ color = Color(0.4862745, 0.08627451, 0.57254905, 1)
 [node name="MenuSelectSound" type="AudioStreamPlayer" parent="." unique_id=1529342826]
 stream = ExtResource("5_kftxf")
 bus = &"SFX"
+
+[node name="AlternateMainTheme" type="AudioStreamPlayer" parent="." unique_id=1539584989]
+stream = ExtResource("6_663nc")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="HBoxContainer/Buttons/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Buttons/ReturnButton" to="." method="_on_return_button_pressed"]

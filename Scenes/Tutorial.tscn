@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6ehw4bgmfjh3" path="res://Scripts/tutorial.gd" id="1_2o727"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="1_wduq8"]
 [ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="3_uo1fs"]
+[ext_resource type="AudioStream" uid="uid://ddmmhvystb3q4" path="res://Assets/Audio/Music/AlternateMainTheme.mp3" id="4_7bloo"]
 
 [node name="Tutorial" type="Control" unique_id=1848302754]
 layout_mode = 3
@@ -63,5 +64,10 @@ grow_vertical = 0
 offset_transform_pivot_ratio = Vector2(0, 0)
 theme = ExtResource("1_wduq8")
 text = "Back To Main Menu"
+
+[node name="AlternateMainTheme" type="AudioStreamPlayer" parent="." unique_id=2006607481]
+stream = ExtResource("4_7bloo")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]

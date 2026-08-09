@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d01b10fkr8gej"]
+
+[ext_resource type="AudioStream" uid="uid://bh4wka1n1x028" path="res://Assets/Audio/Music/SpinningWorldMainTheme.mp3" id="1_qrddh"]
+
+[node name="MainTheme" type="AudioStreamPlayer" unique_id=501422206]
+stream = ExtResource("1_qrddh")
+autoplay = true
+bus = &"Music"

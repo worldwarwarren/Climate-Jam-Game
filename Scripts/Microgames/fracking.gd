@@ -3,6 +3,7 @@ extends "res://Scripts/microgame_base.gd"
 @onready var pipe = $CanvasLayer/Pipe
 @onready var arrow = $CanvasLayer/Arrow
 @onready var camera = $Camera2D
+@onready var OilSound = $OilSound
 var directions = [
 	"Up",
 	"Down",
@@ -49,6 +50,7 @@ func start(speed):
 func playerdir(direction):
 	if dir_list.is_empty() == false:
 		if dir_list[0] == direction:
+			OilSound.play()
 			apply_shake(random_strength)
 			dir_list.erase(direction)
 			pipe.value += 1

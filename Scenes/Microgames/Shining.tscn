@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://capgii5m2v1fs" path="res://Scripts/Microgames/shining.gd" id="1_4yfg1"]
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_2o4kv"]
-[ext_resource type="Texture2D" uid="uid://ddfnxvtg7m1hn" path="res://Assets/Art/Backgrounds/Space.png" id="2_emfh7"]
+[ext_resource type="Texture2D" uid="uid://muw0ipdbv2g4" path="res://Assets/Art/Backgrounds/Space.png" id="2_emfh7"]
 [ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_ydmve"]
+[ext_resource type="AudioStream" uid="uid://qr5meqtaw141" path="res://Assets/Audio/SFX/ShiningWindow.wav" id="5_an4wo"]
 
 [node name="Shining" type="Node2D" unique_id=137618198]
 position = Vector2(-576, -324.06)
@@ -30,29 +31,64 @@ scale = Vector2(21.62143, 19.502413)
 [node name="Window1" parent="WindowGrid" unique_id=1003320631 instance=ExtResource("3_1gje4")]
 position = Vector2(-7.4925685, -12.357447)
 
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window1" unique_id=788560415]
+stream = ExtResource("5_an4wo")
+pitch_scale = 0.6
+
 [node name="Window2" parent="WindowGrid" unique_id=1695011090 instance=ExtResource("3_1gje4")]
 position = Vector2(0.6475029, -12.30617)
+
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window2" unique_id=176790625]
+stream = ExtResource("5_an4wo")
+pitch_scale = 0.7
 
 [node name="Window3" parent="WindowGrid" unique_id=2103844679 instance=ExtResource("3_1gje4")]
 position = Vector2(8.926327, -12.357447)
 
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window3" unique_id=395044629]
+stream = ExtResource("5_an4wo")
+pitch_scale = 0.8
+
 [node name="Window4" parent="WindowGrid" unique_id=2022506388 instance=ExtResource("3_1gje4")]
 position = Vector2(-7.400068, -4.3584366)
+
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window4" unique_id=1598223370]
+stream = ExtResource("5_an4wo")
+pitch_scale = 0.9
 
 [node name="Window5" parent="WindowGrid" unique_id=409394431 instance=ExtResource("3_1gje4")]
 position = Vector2(0.7862544, -4.3584366)
 
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window5" unique_id=820158111]
+stream = ExtResource("5_an4wo")
+
 [node name="Window6" parent="WindowGrid" unique_id=161567016 instance=ExtResource("3_1gje4")]
 position = Vector2(9.1575775, -4.2046094)
+
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window6" unique_id=1263346770]
+stream = ExtResource("5_an4wo")
+pitch_scale = 1.1
 
 [node name="Window7" parent="WindowGrid" unique_id=45687413 instance=ExtResource("3_1gje4")]
 position = Vector2(-7.4925685, 3.4867468)
 
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window7" unique_id=323458146]
+stream = ExtResource("5_an4wo")
+pitch_scale = 1.2
+
 [node name="Window8" parent="WindowGrid" unique_id=1577084370 instance=ExtResource("3_1gje4")]
 position = Vector2(0.83250475, 3.6405735)
 
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window8" unique_id=1319356043]
+stream = ExtResource("5_an4wo")
+pitch_scale = 1.3
+
 [node name="Window9" parent="WindowGrid" unique_id=1075707210 instance=ExtResource("3_1gje4")]
 position = Vector2(9.1575775, 3.538022)
+
+[node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window9" unique_id=251408268]
+stream = ExtResource("5_an4wo")
+pitch_scale = 1.4
 
 [node name="Label" type="Label" parent="." unique_id=1191269753]
 offset_left = -5.581395

@@ -102,3 +102,5 @@ offset_right = 517.0
 offset_bottom = 64.0
 scale = Vector2(0.5600006, 16)
 color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+
+[node name="OilSound" type="AudioStreamPlayer" parent="." unique_id=153828644]

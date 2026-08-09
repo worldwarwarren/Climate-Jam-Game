@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://rvxg5gqb5ck7"]
 
 [ext_resource type="Script" uid="uid://5126wponcipe" path="res://Scripts/transition.gd" id="1_ml2rw"]
-[ext_resource type="FontFile" uid="uid://d0s12c8j7p8ow" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="2_1l5q3"]
+[ext_resource type="FontFile" uid="uid://ihmgmtljhaig" path="res://Assets/Art/UI/Font/virtue_small_bold.ttf" id="2_1l5q3"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_5f4v5"]
-[ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_mh0y2"]
+[ext_resource type="FontFile" uid="uid://djqulg3pxtcio" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_mh0y2"]
 [ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="4_mh0y2"]
-[ext_resource type="AudioStream" uid="uid://b84lrbf8e1n" path="res://Assets/Audio/SFX/IntermissionJingle.mp3" id="6_g0jo3"]
+[ext_resource type="AudioStream" uid="uid://dl68w5s0xw2ra" path="res://Assets/Audio/SFX/IntermissionJingle.mp3" id="6_g0jo3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_obibw"]
 font_size = 140
