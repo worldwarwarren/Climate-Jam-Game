@@ -11,6 +11,7 @@ const spawnRanges = [[100,330],[760,1052]]
 @onready var DetectionBox = $"Shopping Cart/DetectionBox"
 @onready var Cart = $"Shopping Cart"
 @onready var RightWall = $Boundaries/Wall2
+@onready var CashSound = $cashSFX
 
 func spawnProduct(type):
 	var product = productScene.instantiate()
@@ -49,3 +50,8 @@ func _process(delta: float) -> void:
 	else:
 		$Label.label_settings.font_color = Color.RED
 		did_win = false
+
+
+func _on_detection_box_body_entered(body: Node2D) -> void:
+	CashSound.set_pitch_scale(randf_range(0.9, 1.1))
+	CashSound.play()

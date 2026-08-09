@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_7kpb6"]
 [ext_resource type="Script" uid="uid://capjwyj3drky0" path="res://Scripts/Microgames/fire.gd" id="2_uuamf"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_1bee7"]
+[ext_resource type="AudioStream" uid="uid://cu6a8js37th3c" path="res://Assets/Audio/SFX/fireSFX.mp3" id="4_ib18c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
 
@@ -15,7 +16,6 @@ position = Vector2(-576, -324)
 script = ExtResource("1_gyur3")
 verb = "Burning"
 difficultyTimes = Array[float]([5.0, 7.0, 9.0])
-mouse = true
 
 [node name="Fire" type="Area2D" parent="." unique_id=703476563]
 position = Vector2(576, 224)
@@ -30,6 +30,10 @@ texture = ExtResource("2_7kpb6")
 scale = Vector2(12.82, 12.82)
 shape = SubResource("RectangleShape2D_j5tva")
 debug_color = Color(0.8666667, 0.42745098, 0, 0.41960785)
+
+[node name="FireGrowth" type="AudioStreamPlayer" parent="Fire" unique_id=486812841]
+stream = ExtResource("4_ib18c")
+bus = &"SFX"
 
 [node name="Label" type="Label" parent="." unique_id=1459793903]
 offset_left = 339.0

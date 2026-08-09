@@ -40,13 +40,13 @@ autowrap_mode = 2
 stream = ExtResource("3_uo1fs")
 bus = &"SFX"
 
-[node name="Control" type="Control" parent="." unique_id=957617607]
+[node name="Buttons" type="Control" parent="." unique_id=957617607]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 offset_transform_pivot_ratio = Vector2(0, 0)
 
-[node name="Button" type="Button" parent="Control" unique_id=1943467195]
+[node name="Button" type="Button" parent="Buttons" unique_id=1943467195]
 custom_minimum_size = Vector2(190, 100)
 layout_mode = 1
 anchors_preset = 7
@@ -64,4 +64,4 @@ offset_transform_pivot_ratio = Vector2(0, 0)
 theme = ExtResource("1_wduq8")
 text = "Back To Main Menu"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c2ogiv2u2c4ix"]
 
 [ext_resource type="Script" uid="uid://duxwq51gwwaig" path="res://Scripts/Microgames/consuming.gd" id="1_7uxgf"]
-[ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
+[ext_resource type="FontFile" uid="uid://djqulg3pxtcio" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
 [ext_resource type="Texture2D" uid="uid://4jf0l7ue8vf6" path="res://Assets/Art/shopping cart placeholder.png" id="2_mw21a"]
+[ext_resource type="AudioStream" uid="uid://bpn8etkhj2bbd" path="res://Assets/Audio/SFX/cashsound.mp3" id="4_3p6lr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
 size = Vector2(10, 196.4691)
@@ -122,3 +123,8 @@ offset_top = 568.0
 offset_right = 1295.0
 offset_bottom = 652.0
 color = Color(1, 1, 0.6745098, 1)
+
+[node name="cashSFX" type="AudioStreamPlayer" parent="." unique_id=1651372787]
+stream = ExtResource("4_3p6lr")
+
+[connection signal="body_entered" from="Shopping Cart/DetectionBox" to="." method="_on_detection_box_body_entered"]

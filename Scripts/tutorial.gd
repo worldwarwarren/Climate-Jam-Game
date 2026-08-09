@@ -1,5 +1,5 @@
 extends Control
-@onready var buttons = $Control.get_children()
+@onready var buttons = $Buttons.get_children()
 @onready var SelectSound = $MenuSelectSound
 
 func _ready():

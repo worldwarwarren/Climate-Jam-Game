@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_m6uer"]
 [ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="3_m6uer"]
 [ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="4_a43kq"]
+[ext_resource type="AudioStream" uid="uid://bh4wka1n1x028" path="res://Assets/Audio/Music/SpinningWorldMainTheme.mp3" id="5_626he"]
 
 [sub_resource type="Animation" id="Animation_a43kq"]
 length = 0.001
@@ -151,6 +152,8 @@ stream = ExtResource("4_a43kq")
 bus = &"SFX"
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="." unique_id=2088941921]
+stream = ExtResource("5_626he")
+autoplay = true
 bus = &"Music"
 
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_button_hovered"]

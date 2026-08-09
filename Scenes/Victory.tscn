@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6ehw4bgmfjh3" path="res://Scripts/tutorial.gd" id="1_q6vst"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_13fhg"]
 [ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="3_13fhg"]
+[ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="4_f6307"]
 
 [node name="Victory" type="Control" unique_id=1848302754]
 layout_mode = 3
@@ -35,23 +36,6 @@ text = "Through all of your actions, you have destroyed the planet.
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="." unique_id=1943467195]
-custom_minimum_size = Vector2(190, 100)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -149.0
-offset_right = 257.0
-offset_bottom = -91.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_13fhg")
-text = "Back To Main Menu"
-
 [node name="Globe" parent="." unique_id=1869868369 instance=ExtResource("3_13fhg")]
 layout_mode = 0
 offset_left = 1000.0
@@ -66,4 +50,30 @@ offset_top = 370.0
 offset_right = 152.0
 offset_bottom = 370.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Buttons" type="Control" parent="." unique_id=1908423503]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Buttons" unique_id=1943467195]
+custom_minimum_size = Vector2(190, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = 417.0
+offset_right = 813.0
+offset_bottom = 517.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_13fhg")
+text = "Back To Main Menu"
+
+[node name="MenuSelectSound" type="AudioStreamPlayer" parent="." unique_id=1207204572]
+stream = ExtResource("4_f6307")
+bus = &"SFX"
+
+[connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]

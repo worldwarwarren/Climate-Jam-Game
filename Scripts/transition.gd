@@ -10,6 +10,7 @@ extends Node2D
 @export var Controls: Label
 @export_category("External")
 @export var GameTimer: Timer
+@onready var IntermissionSound = $IntermissionSfx
 
 func transition(verb, score, controlType, new_diff):
 	WorldKept.text = "And The World Kept " + verb + "!"
@@ -24,8 +25,10 @@ func transition(verb, score, controlType, new_diff):
 			Controls.text = "Spacebar!"
 	
 	if new_diff:
+		
 		_animation_player.play("difficulty_change")
 		await _animation_player.animation_finished
+	IntermissionSound.play()
 	_animation_player.play("transition1")
 	await _animation_player.animation_finished
 	_animation_player.play("transition2") # so that the stuff doesn't load until it can be visible
