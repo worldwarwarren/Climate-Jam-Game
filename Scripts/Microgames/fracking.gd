@@ -20,6 +20,10 @@ var shake_strength = 0
 
 func _process(delta: float):
 	screen_shake(delta)
+	if difficulty > 1:
+		$CanvasLayer/Sky.color = Color.DIM_GRAY
+		if difficulty > 2 :
+			$CanvasLayer/Green.color = Color.SLATE_GRAY
 	
 	if Input.is_action_just_pressed("ui_left"):
 		playerdir("Left")
@@ -32,12 +36,16 @@ func _process(delta: float):
 	
 	
 func start(speed):
+	difficulty = speed
+	if difficultyTimes.size() >= speed:
+		time = difficultyTimes[speed-1]
 	dir_list = []
 	for i in 3:
 		dir_list.append(directions.pick_random())
 	arrow.set_animation("Arrow")
 	arrowchange(dir_list[0])
 	print(dir_list)
+	
 func playerdir(direction):
 	if dir_list.is_empty() == false:
 		if dir_list[0] == direction:

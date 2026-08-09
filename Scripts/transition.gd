@@ -11,8 +11,11 @@ extends Node2D
 @export_category("External")
 @export var GameTimer: Timer
 @onready var IntermissionSound = $IntermissionSfx
+@onready var globes = [$CanvasLayer/DifficultyChange/Globe,$CanvasLayer/ColorRect/Globe]
 
-func transition(verb, score, controlType, new_diff):
+func transition(verb, score, controlType, new_diff,difficulty):
+	for globe in globes:
+		globe.spin(difficulty)
 	WorldKept.text = "And The World Kept " + verb + "!"
 	ScoreLabel.text = "Score: " + str(score)
 	$CanvasLayer/DifficultyChange/Score.text = "Score: " + str(score)

@@ -17,7 +17,7 @@ func spawnCar():
 
 func _process(delta: float) -> void:
 	if difficulty > 1:
-		$Grass.modulate = Color(0.7,0.7,0.7,1)
+		$Grass.modulate = Color(0.6,0.6,0.6,1)
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:

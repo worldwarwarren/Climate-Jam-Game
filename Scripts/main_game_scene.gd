@@ -16,14 +16,14 @@ var microgamesEasy = [
 	preload("res://Scenes/Microgames/Sawing.tscn")
 ]
 var microgamesMid = [
-	#preload("res://Scenes/Microgames/Trickshot.tscn"),
+	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
-	#preload("res://Scenes/Microgames/Fishing.tscn"),
-	#preload("res://Scenes/Microgames/Fracking.tscn"),
-	#preload("res://Scenes/Microgames/Consuming.tscn"),
-	#preload("res://Scenes/Microgames/Sweating.tscn"),
+	preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Fracking.tscn"),
+	preload("res://Scenes/Microgames/Consuming.tscn"),
+	preload("res://Scenes/Microgames/Sweating.tscn"),
 	preload("res://Scenes/Microgames/Burning.tscn"),
-	#preload("res://Scenes/Microgames/Hosing.tscn")
+	preload("res://Scenes/Microgames/Hosing.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -86,9 +86,9 @@ func play_microgame():
 	var microgame = microgame_scene.instantiate()
 	# Transition
 	if lost:
-		await Transition.transition("Spinning", score, microgame.control_type, new_diff)
+		await Transition.transition("Spinning", score, microgame.control_type, new_diff,difficulty)
 	else:
-		await Transition.transition(microgame.verb, score, microgame.control_type, new_diff)
+		await Transition.transition(microgame.verb, score, microgame.control_type, new_diff,difficulty)
 	new_diff = false
 	if last_microgame != null:
 		last_microgame.queue_free()

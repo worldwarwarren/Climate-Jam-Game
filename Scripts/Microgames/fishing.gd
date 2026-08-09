@@ -19,6 +19,8 @@ func _input(event):
 		
 		
 func _process(delta):
+	if difficulty > 1:
+		$Water2.modulate = Color(1,1,0.7)
 	reel_power -= fish_strength * delta
 	reel_power = clamp(reel_power, 0, max_power)
 	$UI/ReelBar.value = reel_power

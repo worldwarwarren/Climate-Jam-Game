@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2ogiv2u2c4ix"]
 
 [ext_resource type="Script" uid="uid://duxwq51gwwaig" path="res://Scripts/Microgames/consuming.gd" id="1_7uxgf"]
-[ext_resource type="FontFile" uid="uid://djqulg3pxtcio" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
+[ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
 [ext_resource type="Texture2D" uid="uid://4jf0l7ue8vf6" path="res://Assets/Art/shopping cart placeholder.png" id="2_mw21a"]
 [ext_resource type="AudioStream" uid="uid://bpn8etkhj2bbd" path="res://Assets/Audio/SFX/cashsound.mp3" id="4_3p6lr"]
 
@@ -35,7 +35,7 @@ font_color = Color(1, 0, 0, 1)
 position = Vector2(-576, -324)
 script = ExtResource("1_7uxgf")
 verb = "Consuming"
-difficultyTimes = Array[float]([10.0, 8.0, 7.0])
+difficultyTimes = Array[float]([10.0, 8.0, 6.0])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227429835]
 z_index = 1

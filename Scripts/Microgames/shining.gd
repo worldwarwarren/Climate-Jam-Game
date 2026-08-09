@@ -51,5 +51,9 @@ func _on_window_clicked(index):
 		player_index += 1
 		if player_index >= sequence.size():
 			win()
+			$Label.visible = false
+			for window in windows:
+				window.set_on(true)
+				await get_tree().create_timer(0.1).timeout
 	else:
 		lose()
