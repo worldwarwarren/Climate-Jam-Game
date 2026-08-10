@@ -6,4 +6,5 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	get_parent().get_parent().total_drops -= 1
+	get_parent().get_parent().get_node("popsound").play()
 	queue_free()

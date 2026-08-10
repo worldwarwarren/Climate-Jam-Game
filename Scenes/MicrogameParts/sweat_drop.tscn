@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1v3eoubymmxd"]
 
 [ext_resource type="Script" uid="uid://btu06eo87juxy" path="res://Scripts/Microgames/sweat_drop.gd" id="1_8451r"]
+[ext_resource type="AudioStream" uid="uid://jrxh58lcppuy" path="res://Assets/Audio/SFX/sweat.mp3" id="2_2x7i1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obibw"]
 size = Vector2(40, 40)
@@ -26,5 +27,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=665082326]
 shape = SubResource("RectangleShape2D_obibw")
+
+[node name="popsound" type="AudioStreamPlayer" parent="." unique_id=1543289838]
+stream = ExtResource("2_2x7i1")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

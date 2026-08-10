@@ -3,6 +3,7 @@ extends "res://Scripts/microgame_base.gd"
 @onready var TopHalf = $"Top Half"
 @onready var Saw = $Saw
 @onready var _animation_player = $AnimationPlayer
+@onready var cutsound = $cutsound
 const cut_range_y = [400,600]
 const cut_range_x = [570,680]
 var goal_x = 0 # 0 is left, 1 is right
@@ -13,9 +14,13 @@ func _process(delta: float) -> void:
 		$Health.text = "Tree Health: " + str(tree_health)
 		if Saw.position.y <= cut_range_y[1] and Saw.position.y >= cut_range_y[0]:
 			if goal_x == 0 and Saw.position.x <= cut_range_x[0]:
+				cutsound.set_pitch_scale(randf_range(0.9,1.15))
+				cutsound.play()
 				tree_health -= 1
 				goal_x = 1
 			elif goal_x == 1 and Saw.position.x >= cut_range_x[1]:
+				cutsound.set_pitch_scale(randf_range(0.9,1.15))
+				cutsound.play()
 				tree_health -= 1
 				goal_x = 0
 	else:
@@ -24,5 +29,6 @@ func _process(delta: float) -> void:
 		$Health.visible = false
 		Saw.visible = false
 		win()
+		$treefall.play()
 		_animation_player.play("cut")
 		set_process(false)

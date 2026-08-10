@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://uvwy6d3c3146" path="res://Scripts/Microgames/commuting.gd" id="1_4q61q"]
 [ext_resource type="PackedScene" uid="uid://dxl6o08qvsrq0" path="res://Scenes/MicrogameParts/player_car.tscn" id="2_tvghb"]
 [ext_resource type="Texture2D" uid="uid://2c5amlbo4q74" path="res://Assets/Art/Backgrounds/road.png" id="2_wdfwy"]
-[ext_resource type="AudioStream" uid="uid://bwyki3rahtpok" path="res://Assets/Audio/SFX/long-car-crash.wav" id="4_pt841"]
+[ext_resource type="AudioStream" uid="uid://ds6njw517nsil" path="res://Assets/Audio/SFX/long-car-crash.wav" id="4_pt841"]
+[ext_resource type="AudioStream" uid="uid://r4t0vmgxam4o" path="res://Assets/Audio/SFX/driving.mp3" id="5_8d8ha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pt841"]
 atlas = ExtResource("2_wdfwy")
@@ -71,6 +72,11 @@ shape = SubResource("RectangleShape2D_j5tva")
 [node name="CrashSound" type="AudioStreamPlayer" parent="." unique_id=996795354]
 stream = ExtResource("4_pt841")
 volume_db = -4.0
+bus = &"SFX"
+
+[node name="driving" type="AudioStreamPlayer" parent="." unique_id=1636964615]
+stream = ExtResource("5_8d8ha")
+autoplay = true
 bus = &"SFX"
 
 [connection signal="Crashed" from="PlayerCar" to="." method="_on_player_car_crashed"]

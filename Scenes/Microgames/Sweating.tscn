@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_fi28j"]
 [ext_resource type="Texture2D" uid="uid://bg3fhcquvhmmv" path="res://Assets/Art/adult.png" id="2_qmpab"]
 [ext_resource type="Script" uid="uid://x0bn1xj2403w" path="res://Scripts/Microgames/towel.gd" id="2_wk7ad"]
+[ext_resource type="AudioStream" uid="uid://jrxh58lcppuy" path="res://Assets/Audio/SFX/sweat.mp3" id="5_8hm85"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
 font_size = 816
@@ -20,7 +21,6 @@ script = ExtResource("1_ws82e")
 verb = "Sweating"
 time = 5.0
 difficultyTimes = Array[float]([7.0, 6.0, 5.0])
-mouse = true
 
 [node name="Face" type="Label" parent="." unique_id=616697456]
 visible = false
@@ -80,6 +80,9 @@ shape = SubResource("RectangleShape2D_j5tva")
 
 [node name="MainTimer" type="Timer" parent="." unique_id=1947325032]
 one_shot = true
+
+[node name="popsound" type="AudioStreamPlayer" parent="." unique_id=619527860]
+stream = ExtResource("5_8hm85")
 
 [connection signal="timeout" from="SweatTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]
