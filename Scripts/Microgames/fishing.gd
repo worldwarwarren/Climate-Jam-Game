@@ -7,13 +7,19 @@ var fish_strength := 20.0
 var mash_strength := 12.0
 var game_over = false
 @onready var victoryscreen = $VictoryMessage
+@onready var splashsound = $splashsound
+@onready var whooshsound = $whooshsound
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if game_over == false:
+			whooshsound.set_pitch_scale(randf_range(0.9,1.3))
+			whooshsound.play()
 			reel_power += mash_strength
 			$FishingPole.pull()
 			$Fish.reel_progress = reel_power / 40.0
+			if reel_power >= max_power:
+				splashsound.play()
 		else:
 			pass
 		

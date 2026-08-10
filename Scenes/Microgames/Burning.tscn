@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://capjwyj3drky0" path="res://Scripts/Microgames/fire.gd" id="2_uuamf"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_1bee7"]
 [ext_resource type="AudioStream" uid="uid://cu6a8js37th3c" path="res://Assets/Audio/SFX/fireSFX.mp3" id="4_ib18c"]
+[ext_resource type="AudioStream" uid="uid://c2ajbxq34p8wd" path="res://Assets/Audio/SFX/FireCrackling.mp3" id="5_ib18c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
 
@@ -33,6 +34,13 @@ debug_color = Color(0.8666667, 0.42745098, 0, 0.41960785)
 
 [node name="FireGrowth" type="AudioStreamPlayer" parent="Fire" unique_id=486812841]
 stream = ExtResource("4_ib18c")
+volume_db = -23.719
+bus = &"SFX"
+
+[node name="FireCrackling" type="AudioStreamPlayer" parent="Fire" unique_id=971962649]
+stream = ExtResource("5_ib18c")
+volume_db = -5.0
+autoplay = true
 bus = &"SFX"
 
 [node name="Label" type="Label" parent="." unique_id=1459793903]

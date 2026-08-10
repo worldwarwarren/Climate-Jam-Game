@@ -4,6 +4,7 @@ extends "res://Scripts/microgame_base.gd"
 @onready var arrow = $CanvasLayer/Arrow
 @onready var camera = $Camera2D
 @onready var OilSound = $OilSound
+@onready var VictoryJingle = $Victoryjingle
 var directions = [
 	"Up",
 	"Down",
@@ -51,6 +52,7 @@ func playerdir(direction):
 	if dir_list.is_empty() == false:
 		if dir_list[0] == direction:
 			OilSound.play()
+			OilSound.pitch_scale += 0.3
 			apply_shake(random_strength)
 			dir_list.erase(direction)
 			pipe.value += 1
@@ -58,6 +60,7 @@ func playerdir(direction):
 				arrowchange(dir_list[0])
 			else:
 				arrowchange("Done")
+				VictoryJingle.play()
 				win()
 			print(dir_list)
 		else:

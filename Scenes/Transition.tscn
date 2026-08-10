@@ -292,5 +292,9 @@ libraries/ = SubResource("AnimationLibrary_rr8bd")
 
 [node name="IntermissionSfx" type="AudioStreamPlayer" parent="." unique_id=376030446]
 stream = ExtResource("6_g0jo3")
-autoplay = true
+bus = &"Music"
+
+[node name="DifficultySfx" type="AudioStreamPlayer" parent="." unique_id=1271076436]
+stream = ExtResource("6_g0jo3")
+pitch_scale = 1.3
 bus = &"Music"

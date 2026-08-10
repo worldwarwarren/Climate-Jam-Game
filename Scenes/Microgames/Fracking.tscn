@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://d1cjwftf7nqft" path="res://Scripts/Microgames/fracking.gd" id="1_pntsj"]
 [ext_resource type="Texture2D" uid="uid://c3m52qsqhh13m" path="res://Assets/Art/arrow_forward.png" id="2_wbt0d"]
 [ext_resource type="Texture2D" uid="uid://dduo4igafadiq" path="res://Assets/Art/+1.png" id="3_lmiaj"]
+[ext_resource type="AudioStream" uid="uid://cakudk580hhlo" path="res://Assets/Audio/SFX/Oil.wav" id="4_mey7f"]
+[ext_resource type="AudioStream" uid="uid://yahdt55pofg4" path="res://Assets/Audio/Music/potentialvictoryjingle.mp3" id="5_ei8ot"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs732"]
 bg_color = Color(0.31473666, 0.3680422, 0.37529555, 1)
@@ -104,3 +106,7 @@ scale = Vector2(0.5600006, 16)
 color = Color(0.22670749, 0.22670749, 0.22670746, 1)
 
 [node name="OilSound" type="AudioStreamPlayer" parent="." unique_id=153828644]
+stream = ExtResource("4_mey7f")
+
+[node name="Victoryjingle" type="AudioStreamPlayer" parent="." unique_id=1055581375]
+stream = ExtResource("5_ei8ot")

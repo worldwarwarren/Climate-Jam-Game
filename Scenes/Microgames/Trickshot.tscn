@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ca7e5aww7ay7a" path="res://Scripts/Microgames/trickshot.gd" id="1_5ex8g"]
 [ext_resource type="Texture2D" uid="uid://cun1qtd5aot86" path="res://Assets/Art/Sprites/arrow.png" id="2_dfib4"]
-[ext_resource type="Texture2D" uid="uid://cp0r64keqd1q8" path="res://Assets/Art/redcirclefull.png" id="2_fni4r"]
+[ext_resource type="Texture2D" uid="uid://8uqav8bmki1i" path="res://Assets/Art/redcirclefull.png" id="2_fni4r"]
 [ext_resource type="Texture2D" uid="uid://cktocokxc2ahp" path="res://Assets/Art/Sprites/trashbag.png" id="4_nlhb1"]
-[ext_resource type="Texture2D" uid="uid://dkyri05j24qc0" path="res://Assets/Art/Sprites/trashcan.png" id="4_xe5xh"]
+[ext_resource type="Texture2D" uid="uid://57vcdf04qykp" path="res://Assets/Art/Sprites/trashcan.png" id="4_xe5xh"]
+[ext_resource type="AudioStream" uid="uid://c85pq23e5ics0" path="res://Assets/Audio/SFX/throw.mp3" id="6_01gfx"]
+[ext_resource type="AudioStream" uid="uid://cycp7y8pfba2o" path="res://Assets/Audio/SFX/trashcan.mp3" id="7_sboil"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5tva"]
 radius = 80.0
@@ -128,5 +130,13 @@ position = Vector2(716.9999, 667)
 rotation = 0.5314082
 scale = Vector2(25.883146, 25.159348)
 texture = ExtResource("4_nlhb1")
+
+[node name="ThrowSound" type="AudioStreamPlayer" parent="." unique_id=1133409843]
+stream = ExtResource("6_01gfx")
+bus = &"SFX"
+
+[node name="TrashcanSound" type="AudioStreamPlayer" parent="." unique_id=1183574810]
+stream = ExtResource("7_sboil")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

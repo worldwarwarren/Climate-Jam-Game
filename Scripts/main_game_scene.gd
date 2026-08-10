@@ -8,22 +8,22 @@ var score = 0
 # List of microgames per difficulty
 var microgamesEasy = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
-	preload("res://Scenes/Microgames/Commuting.tscn"),
-	preload("res://Scenes/Microgames/Fishing.tscn"),
-	preload("res://Scenes/Microgames/Fracking.tscn"),
+	#preload("res://Scenes/Microgames/Commuting.tscn"),
+	#preload("res://Scenes/Microgames/Fishing.tscn"),
+	#preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Consuming.tscn"),
 	preload("res://Scenes/Microgames/Shining.tscn"),
-	preload("res://Scenes/Microgames/Sawing.tscn")
+	#preload("res://Scenes/Microgames/Sawing.tscn")
 ]
 var microgamesMid = [
-	preload("res://Scenes/Microgames/Trickshot.tscn"),
-	preload("res://Scenes/Microgames/Hunting.tscn"),
-	preload("res://Scenes/Microgames/Fishing.tscn"),
-	preload("res://Scenes/Microgames/Fracking.tscn"),
-	preload("res://Scenes/Microgames/Consuming.tscn"),
-	preload("res://Scenes/Microgames/Sweating.tscn"),
+	#preload("res://Scenes/Microgames/Trickshot.tscn"),
+	#preload("res://Scenes/Microgames/Hunting.tscn"),
+	#preload("res://Scenes/Microgames/Fishing.tscn"),
+	#preload("res://Scenes/Microgames/Fracking.tscn"),
+	#preload("res://Scenes/Microgames/Consuming.tscn"),
+	#preload("res://Scenes/Microgames/Sweating.tscn"),
 	preload("res://Scenes/Microgames/Burning.tscn"),
-	preload("res://Scenes/Microgames/Hosing.tscn")
+	#preload("res://Scenes/Microgames/Hosing.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -114,4 +114,5 @@ func play_microgame():
 	else:
 		print("LOSE")
 		lost = true
+	
 	last_microgame = microgame

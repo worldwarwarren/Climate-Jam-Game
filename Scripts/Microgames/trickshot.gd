@@ -7,6 +7,8 @@ var chosenAngle: int
 var direction = -1
 @onready var Bar = $Bar
 @onready var Ball = $Ball
+@onready var ThrowSound = $ThrowSound
+@onready var TrashcanSound = $TrashcanSound
 
 func _physics_process(delta: float) -> void:
 	if difficulty > 1:
@@ -21,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		if Bar.rotation_degrees >= 0 or Bar.rotation_degrees <= -90:
 			direction *= -1
 	if Input.is_action_just_pressed("ui_accept"):
+		ThrowSound.play()
 		chosenAngle = abs(Bar.rotation_degrees)
 		#chosenAngle = 55
 		print(chosenAngle)
@@ -31,4 +34,5 @@ func _physics_process(delta: float) -> void:
 	$Ball.move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	TrashcanSound.play()
 	win()

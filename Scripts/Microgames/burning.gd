@@ -4,10 +4,14 @@ const max_size = Vector2(1.0,1.0)
 const min_size = Vector2(0.08,0.08)
 var potential_spawns = [Vector2(234,365),Vector2(918,365),Vector2(427,493),Vector2(725,493),Vector2(576,500),Vector2(141,200), Vector2(1011,200)]
 @onready var Fire = $Fire
+@onready var Crackling = $Fire/FireCrackling
+var CracklingMax = 20
 @onready var ItemScene = preload("res://Scenes/MicrogameParts/burningitem.tscn")
 var fuel_left = 4
 
+
 func _ready() -> void:
+	Crackling.play()
 	did_win = true
 	potential_spawns.shuffle() # randomizing order
 	for spawn in potential_spawns:
@@ -26,6 +30,9 @@ func spawnItem(spawn_pos):
 func _process(delta: float) -> void:
 	if Fire != null:
 		Fire.scale -= Vector2(0.004,0.004)
+		Crackling.set_volume_db(Crackling.volume_db - 0.05)
+		if Crackling.volume_db > CracklingMax:
+			Crackling.volume_db = CracklingMax
 		if Fire.scale > max_size:
 			Fire.scale = max_size
 		elif Fire.scale < min_size:

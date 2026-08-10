@@ -11,6 +11,7 @@ extends Node2D
 @export_category("External")
 @export var GameTimer: Timer
 @onready var IntermissionSound = $IntermissionSfx
+@onready var DifficultySound = $DifficultySfx
 @onready var globes = [$CanvasLayer/DifficultyChange/Globe,$CanvasLayer/ColorRect/Globe]
 
 func transition(verb, score, controlType, new_diff,difficulty):
@@ -28,7 +29,8 @@ func transition(verb, score, controlType, new_diff,difficulty):
 			Controls.text = "Spacebar!"
 	
 	if new_diff:
-		IntermissionSound.play() #REPLACE W/ DIFFICULTY UP SOUND
+		if score > 1:
+			DifficultySound.play()
 		_animation_player.play("difficulty_change")
 		await _animation_player.animation_finished
 	IntermissionSound.play()

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://muw0ipdbv2g4" path="res://Assets/Art/Backgrounds/Space.png" id="2_emfh7"]
 [ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_ydmve"]
-[ext_resource type="AudioStream" uid="uid://qr5meqtaw141" path="res://Assets/Audio/SFX/ShiningWindow.wav" id="5_an4wo"]
+[ext_resource type="AudioStream" uid="uid://tfaqgj3osdr0" path="res://Assets/Audio/SFX/piano.mp3" id="5_an4wo"]
 
 [node name="Shining" type="Node2D" unique_id=137618198]
 position = Vector2(-576, -324.06)
