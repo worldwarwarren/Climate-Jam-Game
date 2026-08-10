@@ -15,6 +15,6 @@ func _input_event(viewport, event, shape_idx):
 		
 func set_on(value: bool):
 	if value:
-		sprite.modulate = Color(1, 1, 0)
+		sprite.frame = 1
 	else:
-		sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		sprite.frame = 0

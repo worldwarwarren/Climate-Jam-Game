@@ -1,16 +1,84 @@
 [gd_scene format=3 uid="uid://od3m317gn40v"]
 
 [ext_resource type="Script" uid="uid://ba4iwlshysqqy" path="res://Scripts/Microgames/burning.gd" id="1_gyur3"]
-[ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_7kpb6"]
+[ext_resource type="Texture2D" uid="uid://dpppcs4y6a0ol" path="res://Assets/Art/Backgrounds/burning background.png" id="2_4t7oe"]
+[ext_resource type="Texture2D" uid="uid://vbioxcgu8iai" path="res://Assets/Art/Sprites/furnace.png" id="2_7rwll"]
 [ext_resource type="Script" uid="uid://capjwyj3drky0" path="res://Scripts/Microgames/fire.gd" id="2_uuamf"]
+[ext_resource type="Texture2D" uid="uid://diqcp734tslpv" path="res://Assets/Art/Sprites/fire.png" id="3_ib18c"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_1bee7"]
 [ext_resource type="AudioStream" uid="uid://cu6a8js37th3c" path="res://Assets/Audio/SFX/fireSFX.mp3" id="4_ib18c"]
 [ext_resource type="AudioStream" uid="uid://c2ajbxq34p8wd" path="res://Assets/Audio/SFX/FireCrackling.mp3" id="5_ib18c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rwll"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t7oe"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxmt1"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7mbc"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsdfi"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmwv4"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oill8"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gepor"]
+atlas = ExtResource("3_ib18c")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5tva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rwll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t7oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxmt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7mbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsdfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmwv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oill8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gepor")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tva"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5tva"]
 font_size = 60
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Burning" type="Node2D" unique_id=638843341]
 position = Vector2(-576, -324)
@@ -18,16 +86,30 @@ script = ExtResource("1_gyur3")
 verb = "Burning"
 difficultyTimes = Array[float]([5.0, 7.0, 9.0])
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=180683766]
+position = Vector2(579.1875, 325)
+scale = Vector2(20.375, 20.375)
+texture = ExtResource("2_4t7oe")
+
+[node name="Furnace" type="Sprite2D" parent="." unique_id=845461105]
+position = Vector2(573.44, 422.44)
+scale = Vector2(6.585, 6.585)
+texture = ExtResource("2_7rwll")
+
 [node name="Fire" type="Area2D" parent="." unique_id=703476563]
-position = Vector2(576, 224)
+position = Vector2(573.44, 402)
 script = ExtResource("2_uuamf")
 
-[node name="FireSprite" type="Sprite2D" parent="Fire" unique_id=396741546]
+[node name="FireSprite" type="AnimatedSprite2D" parent="Fire" unique_id=102934357]
 modulate = Color(1, 0.5372549, 0, 1)
-scale = Vector2(2, 2)
-texture = ExtResource("2_7kpb6")
+position = Vector2(0, -125.36499)
+scale = Vector2(8.105, 8.105)
+sprite_frames = SubResource("SpriteFrames_j5tva")
+autoplay = "default"
+frame_progress = 0.7658381
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire" unique_id=159714964]
+position = Vector2(0, -125.36499)
 scale = Vector2(12.82, 12.82)
 shape = SubResource("RectangleShape2D_j5tva")
 debug_color = Color(0.8666667, 0.42745098, 0, 0.41960785)
@@ -44,13 +126,13 @@ autoplay = true
 bus = &"SFX"
 
 [node name="Label" type="Label" parent="." unique_id=1459793903]
-offset_left = 339.0
+offset_left = 298.0
 offset_top = 5.0
-offset_right = 812.0
+offset_right = 819.0
 offset_bottom = 88.0
 theme = ExtResource("4_1bee7")
 theme_override_font_sizes/font_size = 30
-text = "Put Fuel In The Flame!
+text = "Put Fuel In The Furnace!
 Don't Put Water!"
 label_settings = SubResource("LabelSettings_j5tva")
 horizontal_alignment = 1

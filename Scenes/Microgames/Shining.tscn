@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctlniebrf1l3k" path="res://icon.svg" id="2_2o4kv"]
 [ext_resource type="Texture2D" uid="uid://ddfnxvtg7m1hn" path="res://Assets/Art/Backgrounds/Space.png" id="2_emfh7"]
 [ext_resource type="PackedScene" uid="uid://c1atm36ndbnup" path="res://Scenes/MicrogameParts/window.tscn" id="3_1gje4"]
+[ext_resource type="Texture2D" uid="uid://bb5pxqfkruy8e" path="res://Assets/Art/Sprites/doors.png" id="4_482mo"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="4_ydmve"]
 [ext_resource type="AudioStream" uid="uid://tfaqgj3osdr0" path="res://Assets/Audio/SFX/piano.mp3" id="5_an4wo"]
 
@@ -23,6 +24,11 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(533.00006, 359)
 scale = Vector2(4.6800003, 5.4799986)
 texture = ExtResource("2_2o4kv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=788413911]
+position = Vector2(539, 543.5)
+scale = Vector2(3.713, 3.713)
+texture = ExtResource("4_482mo")
 
 [node name="WindowGrid" type="Node2D" parent="." unique_id=1704708425]
 position = Vector2(522.00006, 345)
@@ -77,7 +83,7 @@ stream = ExtResource("5_an4wo")
 pitch_scale = 1.2
 
 [node name="Window8" parent="WindowGrid" unique_id=1577084370 instance=ExtResource("3_1gje4")]
-position = Vector2(0.83250475, 3.6405735)
+position = Vector2(0.83250475, 3.4879382)
 
 [node name="ShiningWindow" type="AudioStreamPlayer" parent="WindowGrid/Window8" unique_id=1319356043]
 stream = ExtResource("5_an4wo")
