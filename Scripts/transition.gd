@@ -15,6 +15,7 @@ extends Node2D
 @onready var globes = [$CanvasLayer/DifficultyChange/Globe,$CanvasLayer/ColorRect/Globe]
 
 func transition(verb, score, controlType, new_diff,difficulty):
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"),true) # Muting sfx so sound effects dont play mid transition when they shouldnt
 	for globe in globes:
 		globe.spin(difficulty)
 	WorldKept.text = "And The World Kept " + verb + "!"
@@ -29,13 +30,13 @@ func transition(verb, score, controlType, new_diff,difficulty):
 			Controls.text = "Spacebar!"
 	
 	if new_diff:
-		if score > 1:
-			DifficultySound.play()
+		DifficultySound.play()
 		_animation_player.play("difficulty_change")
 		await _animation_player.animation_finished
 	IntermissionSound.play()
 	_animation_player.play("transition1")
 	await _animation_player.animation_finished
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"),false)
 	_animation_player.play("transition2") # so that the stuff doesn't load until it can be visible
 
 func _process(delta: float) -> void:

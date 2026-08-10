@@ -4,26 +4,27 @@ var score = 0
 @onready var Transition = $Transition
 @onready var GameTimer = $GameTimer
 @onready var MicrogameContainer = $MicrogameContainer
+const WIN_THRESHOLD = 20
 
 # List of microgames per difficulty
 var microgamesEasy = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
-	#preload("res://Scenes/Microgames/Commuting.tscn"),
-	#preload("res://Scenes/Microgames/Fishing.tscn"),
-	#preload("res://Scenes/Microgames/Fracking.tscn"),
+	preload("res://Scenes/Microgames/Commuting.tscn"),
+	preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Consuming.tscn"),
 	preload("res://Scenes/Microgames/Shining.tscn"),
-	#preload("res://Scenes/Microgames/Sawing.tscn")
+	preload("res://Scenes/Microgames/Sawing.tscn")
 ]
 var microgamesMid = [
-	#preload("res://Scenes/Microgames/Trickshot.tscn"),
-	#preload("res://Scenes/Microgames/Hunting.tscn"),
-	#preload("res://Scenes/Microgames/Fishing.tscn"),
-	#preload("res://Scenes/Microgames/Fracking.tscn"),
-	#preload("res://Scenes/Microgames/Consuming.tscn"),
-	#preload("res://Scenes/Microgames/Sweating.tscn"),
+	preload("res://Scenes/Microgames/Trickshot.tscn"),
+	preload("res://Scenes/Microgames/Hunting.tscn"),
+	preload("res://Scenes/Microgames/Fishing.tscn"),
+	preload("res://Scenes/Microgames/Fracking.tscn"),
+	preload("res://Scenes/Microgames/Consuming.tscn"),
+	preload("res://Scenes/Microgames/Sweating.tscn"),
 	preload("res://Scenes/Microgames/Burning.tscn"),
-	#preload("res://Scenes/Microgames/Hosing.tscn")
+	preload("res://Scenes/Microgames/Hosing.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -56,7 +57,7 @@ func _ready():
 	
 #Function to loop the microgames
 func game_loop():
-	while true:
+	while score < WIN_THRESHOLD: # Fixes a bug that was causing audio to be played mid scene change due to looping it after victory
 		await play_microgame()
 
 #Function to play a microgame
@@ -106,8 +107,9 @@ func play_microgame():
 	if microgame.did_win:
 		print("WIN")
 		score += 1
-		if score >= 20:
+		if score >= WIN_THRESHOLD:
 			get_tree().change_scene_to_file("res://Scenes/Victory.tscn")
+			
 		print(score)
 		lost = false
 		microgames_left -= 1

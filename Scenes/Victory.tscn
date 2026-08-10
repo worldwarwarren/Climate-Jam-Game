@@ -42,6 +42,7 @@ offset_left = 1000.0
 offset_top = 370.0
 offset_right = 1000.0
 offset_bottom = 370.0
+stage = 4
 
 [node name="Globe2" parent="." unique_id=1670270854 instance=ExtResource("3_13fhg")]
 layout_mode = 0
@@ -49,6 +50,7 @@ offset_left = 152.0
 offset_top = 370.0
 offset_right = 152.0
 offset_bottom = 370.0
+stage = 4
 
 [node name="Buttons" type="Control" parent="." unique_id=1908423503]
 anchors_preset = 0
