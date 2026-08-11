@@ -4,7 +4,7 @@ const SET_PATH = "user://settings.json"
 
 # Volume settings, keeps track of audio levels for the audio buses (linear, not db)
 var VolumeSettings = {"Master":1,"SFX":1,"Music":1}
-
+var world_destroyed = false
 
 func _saveSettings():
 	# Saves new volumes

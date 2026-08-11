@@ -36,6 +36,7 @@ Art done by Atalay Turkarslan and Kim Fayorsey
 Main theme by toovy12
 Font by ChevyRay
 Fracking Victory Jingle by EloLeChan
+Fire by Devkidd
 SFX from Pixabay"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -59,9 +60,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 300.0
-offset_top = 460.0
+offset_top = 496.0
 offset_right = 813.0
-offset_bottom = 560.0
+offset_bottom = 596.0
 grow_horizontal = 2
 grow_vertical = 0
 offset_transform_pivot_ratio = Vector2(0, 0)

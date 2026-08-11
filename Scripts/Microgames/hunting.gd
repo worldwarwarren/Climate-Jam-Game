@@ -9,6 +9,10 @@ var target = 0
 func _ready():
 	start(1.0)
 
+func _process(delta: float) -> void:
+	if difficulty > 2:
+		$ColorRect.color = Color.SLATE_GRAY
+
 func start(speed):
 	target = randi_range(2, 5)
 	Score_Label.text = ("Shoot " + str(target))

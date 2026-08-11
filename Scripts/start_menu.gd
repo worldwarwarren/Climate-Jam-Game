@@ -4,6 +4,11 @@ extends Control
 
 
 func _ready():
+	if Settings.world_destroyed:
+		$CanvasLayer/Globe.spin(4)
+		$CanvasLayer/VBoxContainer/PlayButton.visible = false
+	else:
+		$CanvasLayer/Globe.spin(1)
 	Settings._loadSettings()
 	$AnimationPlayer.play("menu_in")
 	for button in buttons:
