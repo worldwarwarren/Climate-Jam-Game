@@ -8,6 +8,11 @@ func _ready():
 func _process(delta):
 	position = position.move_toward(target_position, speed * delta)
 	
+	if target_position.x < position.x:
+		$Sprite2D.flip_h = false
+	else:
+		$Sprite2D.flip_h = true
+	
 	if position.distance_to(target_position) < 5:
 		pick_new_position()
 

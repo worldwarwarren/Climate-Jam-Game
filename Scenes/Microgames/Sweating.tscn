@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bmxp1b3kjf78y"]
 
 [ext_resource type="Script" uid="uid://i4a2g1ry62q8" path="res://Scripts/Microgames/sweating.gd" id="1_ws82e"]
+[ext_resource type="Texture2D" uid="uid://bo8r6h05ermsf" path="res://Assets/Art/Sprites/Forehead.png" id="2_8hm85"]
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_fi28j"]
-[ext_resource type="Texture2D" uid="uid://bg3fhcquvhmmv" path="res://Assets/Art/adult.png" id="2_qmpab"]
 [ext_resource type="Script" uid="uid://x0bn1xj2403w" path="res://Scripts/Microgames/towel.gd" id="2_wk7ad"]
 [ext_resource type="AudioStream" uid="uid://jrxh58lcppuy" path="res://Assets/Audio/SFX/sweat.mp3" id="5_8hm85"]
 
@@ -34,9 +34,9 @@ label_settings = SubResource("LabelSettings_j5tva")
 [node name="Adult" type="Sprite2D" parent="." unique_id=685917625]
 z_index = -3
 texture_filter = 2
-position = Vector2(582.00006, 479.00006)
-scale = Vector2(8.04, 8.04)
-texture = ExtResource("2_qmpab")
+position = Vector2(611, 221)
+scale = Vector2(2.109747, 2.109747)
+texture = ExtResource("2_8hm85")
 
 [node name="Instructions" type="Label" parent="." unique_id=1158605243]
 anchors_preset = 5
@@ -83,6 +83,16 @@ one_shot = true
 
 [node name="popsound" type="AudioStreamPlayer" parent="." unique_id=619527860]
 stream = ExtResource("5_8hm85")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1389418646]
+z_index = -9
+offset_left = -282.99997
+offset_top = -297.0
+offset_right = -242.99997
+offset_bottom = -257.0
+scale = Vector2(70.2, 36.173454)
+mouse_filter = 2
+color = Color(0.36078432, 0, 0, 1)
 
 [connection signal="timeout" from="SweatTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]

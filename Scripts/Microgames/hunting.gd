@@ -29,7 +29,10 @@ func _on_animal_clicked():
 	Shot_Sound.set_pitch_scale(randf_range(0.9, 1.4))
 	Shot_Sound.play()
 	hunt_score += 1
-	Score_Label.text = ("Shoot " + str(target - hunt_score) + " more")
+	if hunt_score < target:
+		Score_Label.text = ("Shoot " + str(target - hunt_score) + " more")
+	else:
+		Score_Label.text = "You've shot enough!!"
 	
 	if hunt_score >= target:
 		win()

@@ -10,6 +10,7 @@ verb = "Hunting"
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
 
 [node name="Animal Container" type="Node2D" parent="." unique_id=708511753]
+position = Vector2(-227, -174)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1252265766]
 
@@ -43,3 +44,13 @@ vertical_alignment = 1
 stream = ExtResource("3_cxsor")
 volume_db = -1.01
 bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1942139121]
+z_index = -9
+offset_left = -1871.0
+offset_top = -1174.9999
+offset_right = -1693.314
+offset_bottom = -1001.1802
+scale = Vector2(29.039997, 18.64)
+mouse_filter = 2
+color = Color(0.36900422, 0.63516253, 0.26439393, 1)
