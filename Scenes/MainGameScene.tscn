@@ -8,7 +8,7 @@
 script = ExtResource("1_cp132")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1052262727]
-z_index = -5
+z_index = -100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
