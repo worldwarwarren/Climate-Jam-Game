@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2ej0tbw582xe" path="res://Scripts/main_game_scene.gd" id="1_cp132"]
 [ext_resource type="PackedScene" uid="uid://rvxg5gqb5ck7" path="res://Scenes/Transition.tscn" id="2_2axvc"]
+[ext_resource type="PackedScene" uid="uid://c2lwdbdgem4h1" path="res://Scenes/pause_menu.tscn" id="3_7px2j"]
 
 [node name="Main" type="Node2D" unique_id=796776483]
 script = ExtResource("1_cp132")
@@ -15,3 +16,6 @@ one_shot = true
 
 [node name="MicrogameContainer" type="Node2D" parent="." unique_id=272890155]
 position = Vector2(576, 324)
+
+[node name="PauseMenu" parent="." unique_id=752378037 instance=ExtResource("3_7px2j")]
+visible = false

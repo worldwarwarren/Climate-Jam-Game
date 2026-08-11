@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://c2lwdbdgem4h1"]
+
+[ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://qsf81r24nca5" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="3_1och7"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=752378037]
+process_mode = 3
+layer = 9
+script = ExtResource("1_k0w1u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1013839048]
+visibility_layer = 3
+z_index = 10
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.157925, 16.649887)
+color = Color(0, 0, 0, 0.6117647)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1317897161]
+z_index = 11
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -295.0
+offset_right = 217.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_emv3i")
+theme_override_font_sizes/normal_font_size = 180
+bbcode_enabled = true
+text = "[wave amp = 900] Paused"
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=2019017388]
+z_index = 11
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Buttons" unique_id=2112656260]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("1_emv3i")
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="Buttons" unique_id=1189394181]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("1_emv3i")
+text = "Main Menu"
+
+[node name="MenuSelectSound" type="AudioStreamPlayer" parent="." unique_id=118489536]
+stream = ExtResource("3_1och7")
+bus = &"SFX"
+
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Buttons/Main Menu" to="." method="_on_main_menu_pressed"]

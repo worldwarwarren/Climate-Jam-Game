@@ -34,7 +34,7 @@ label_settings = SubResource("LabelSettings_j5tva")
 [node name="Adult" type="Sprite2D" parent="." unique_id=685917625]
 z_index = -3
 texture_filter = 2
-position = Vector2(611, 221)
+position = Vector2(611, 275)
 scale = Vector2(2.109747, 2.109747)
 texture = ExtResource("2_8hm85")
 
