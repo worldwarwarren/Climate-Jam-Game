@@ -4,7 +4,7 @@ var score = 0
 @onready var Transition = $Transition
 @onready var GameTimer = $GameTimer
 @onready var MicrogameContainer = $MicrogameContainer
-const WIN_THRESHOLD = 20
+const WIN_THRESHOLD = 24
 
 # List of microgames per difficulty
 var microgamesEasy = [
@@ -14,7 +14,8 @@ var microgamesEasy = [
 	preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Consuming.tscn"),
 	preload("res://Scenes/Microgames/Shining.tscn"),
-	preload("res://Scenes/Microgames/Sawing.tscn")
+	preload("res://Scenes/Microgames/Sawing.tscn"),
+	preload("res://Scenes/Microgames/Hosing.tscn")
 ]
 var microgamesMid = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -24,24 +25,25 @@ var microgamesMid = [
 	preload("res://Scenes/Microgames/Consuming.tscn"),
 	preload("res://Scenes/Microgames/Sweating.tscn"),
 	preload("res://Scenes/Microgames/Burning.tscn"),
-	preload("res://Scenes/Microgames/Hosing.tscn")
+	preload("res://Scenes/Microgames/Hosing.tscn"),
+	preload("res://Scenes/Microgames/Shining.tscn")
 ]
 var microgamesHard = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
-	preload("res://Scenes/Microgames/Hosing.tscn"),
 	preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Sweating.tscn"),
 	preload("res://Scenes/Microgames/Sawing.tscn"),
 	preload("res://Scenes/Microgames/Burning.tscn"),
-	preload("res://Scenes/Microgames/Commuting.tscn")
+	preload("res://Scenes/Microgames/Commuting.tscn"),
+	preload("res://Scenes/Microgames/Shining.tscn")
 ]
 
 #Lists all of the microgames available currently
 @onready var microgames = microgamesEasy
 #Checks the last microgame that has been played
 #Used later to prevent repeats
-var last_microgame_scene = null
+var last_microgame_scene = [null,null,null]
 @onready var microgames_left = microgamesEasy.size() # Tracking microgames that have been used already
 var last_microgame = null # For queue freeing the old one during the transition
 # Checking if the player lost or not so they can retry
@@ -60,6 +62,12 @@ func game_loop():
 	while score < WIN_THRESHOLD: # Fixes a bug that was causing audio to be played mid scene change due to looping it after victory
 		await play_microgame()
 
+func check_prev(scene):
+	for game in last_microgame_scene:
+		if game == scene:
+			return true
+	return false
+
 #Function to play a microgame
 func play_microgame():
 	if (microgames_left == 0):
@@ -75,13 +83,16 @@ func play_microgame():
 		print("Difficulty " + str(difficulty))
 	#Chooses a random microgame from the microgames list
 	var microgame_scene = microgames.pick_random()
-	#Checks if the microgame was the last one played
-	while microgame_scene == last_microgame_scene:
+	#Checks if the microgame was one of the last one played
+	while check_prev(microgame_scene):
 		microgame_scene = microgames.pick_random()
 	#Sets the current game as the new "last_microgame"
 	if lost:
-		microgame_scene = last_microgame_scene
-	last_microgame_scene = microgame_scene
+		microgame_scene = last_microgame_scene[0]
+	if last_microgame_scene[0] != microgame_scene:
+		last_microgame_scene.push_front(microgame_scene)
+		last_microgame_scene.pop_back()
+	print(last_microgame_scene)
 		
 	#Instantiates the microgame, adds it as a child, and centers it.
 	var microgame = microgame_scene.instantiate()

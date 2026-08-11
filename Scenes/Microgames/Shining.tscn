@@ -13,7 +13,7 @@ position = Vector2(-576, -324)
 scale = Vector2(1.075, 1.075)
 script = ExtResource("1_4yfg1")
 verb = "Shining"
-difficultyTimes = Array[float]([6.0])
+difficultyTimes = Array[float]([7.0, 6.0, 5.0])
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1129219538]
 position = Vector2(576, 324)
