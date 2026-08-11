@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ca7e5aww7ay7a" path="res://Scripts/Microgames/trickshot.gd" id="1_5ex8g"]
 [ext_resource type="Texture2D" uid="uid://cun1qtd5aot86" path="res://Assets/Art/Sprites/arrow.png" id="2_dfib4"]
-[ext_resource type="Texture2D" uid="uid://8uqav8bmki1i" path="res://Assets/Art/redcirclefull.png" id="2_fni4r"]
+[ext_resource type="Texture2D" uid="uid://cp0r64keqd1q8" path="res://Assets/Art/redcirclefull.png" id="2_fni4r"]
+[ext_resource type="Texture2D" uid="uid://b6bcqpbwegy76" path="res://Assets/Art/Backgrounds/fishingbackground.png" id="2_sboil"]
+[ext_resource type="Texture2D" uid="uid://ddp7eaphxah6" path="res://Assets/Art/Backgrounds/water.png" id="3_qi1re"]
 [ext_resource type="Texture2D" uid="uid://cktocokxc2ahp" path="res://Assets/Art/Sprites/trashbag.png" id="4_nlhb1"]
-[ext_resource type="Texture2D" uid="uid://57vcdf04qykp" path="res://Assets/Art/Sprites/trashcan.png" id="4_xe5xh"]
+[ext_resource type="Texture2D" uid="uid://dkyri05j24qc0" path="res://Assets/Art/Sprites/trashcan.png" id="4_xe5xh"]
 [ext_resource type="AudioStream" uid="uid://c85pq23e5ics0" path="res://Assets/Audio/SFX/throw.mp3" id="6_01gfx"]
 [ext_resource type="AudioStream" uid="uid://cycp7y8pfba2o" path="res://Assets/Audio/SFX/trashcan.mp3" id="7_sboil"]
 
@@ -30,12 +32,39 @@ difficulty = 1
 difficultyTimes = Array[float]([5.0, 4.0, 3.0])
 control_type = 2
 
-[node name="Red" type="Sprite2D" parent="." unique_id=339850883]
+[node name="Sky" type="Sprite2D" parent="." unique_id=889994775]
+position = Vector2(576, 324)
+texture = ExtResource("2_sboil")
+
+[node name="Sea" type="Sprite2D" parent="." unique_id=185687326]
+position = Vector2(185, 520)
+scale = Vector2(0.32098764, 0.32098764)
+texture = ExtResource("3_qi1re")
+
+[node name="Sea2" type="Sprite2D" parent="." unique_id=1912107064]
+position = Vector2(549.00006, 519)
+scale = Vector2(0.32098764, 0.32098764)
+texture = ExtResource("3_qi1re")
+
+[node name="Sea3" type="Sprite2D" parent="." unique_id=683425488]
+position = Vector2(915.00006, 519)
+scale = Vector2(0.32098764, 0.32098764)
+texture = ExtResource("3_qi1re")
+
+[node name="Sand" type="ColorRect" parent="." unique_id=1259884717]
+offset_top = 530.0
+offset_right = 1252.0
+offset_bottom = 678.0
+color = Color(0.99607843, 0.8980392, 0.3372549, 1)
+
+[node name="Reference" type="Node2D" parent="." unique_id=1694384153]
+
+[node name="Red" type="Sprite2D" parent="Reference" unique_id=339850883]
 position = Vector2(42.500008, 606.23376)
 scale = Vector2(0.87188613, 0.87188613)
 texture = ExtResource("2_fni4r")
 
-[node name="Green3" type="ColorRect" parent="." unique_id=1084227651]
+[node name="Green3" type="ColorRect" parent="Reference" unique_id=1084227651]
 offset_left = 17.317009
 offset_top = 626.4167
 offset_right = 169.69781
@@ -43,7 +72,7 @@ offset_bottom = 638.9433
 rotation = -1.0473211
 color = Color(0, 1, 0, 1)
 
-[node name="Green2" type="ColorRect" parent="." unique_id=291681228]
+[node name="Green2" type="ColorRect" parent="Reference" unique_id=291681228]
 offset_left = 20.317001
 offset_top = 628.2597
 offset_right = 171.97673
@@ -51,7 +80,7 @@ offset_bottom = 643.569
 rotation = -1.1693707
 color = Color(0, 1, 0, 1)
 
-[node name="Green" type="ColorRect" parent="." unique_id=433426096]
+[node name="Green" type="ColorRect" parent="Reference" unique_id=433426096]
 offset_left = 12.283299
 offset_top = 622.2059
 offset_right = 164.83316
@@ -105,12 +134,22 @@ position = Vector2(131, 153.29163)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_obibw")
 
-[node name="ColorRect made to look like background to hide clipping (will be changed later)" type="ColorRect" parent="." unique_id=62993343]
-offset_left = 1049.0
-offset_top = 49.0
-offset_right = 1206.0
-offset_bottom = 909.0
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+[node name="Sky (for hiding clipping" type="Sprite2D" parent="." unique_id=1104963999]
+position = Vector2(1159.5, 324)
+scale = Vector2(0.1779514, 1)
+texture = ExtResource("2_sboil")
+
+[node name="Sea4" type="Sprite2D" parent="." unique_id=684573263]
+position = Vector2(1167, 519)
+scale = Vector2(0.32098764, 0.32098764)
+texture = ExtResource("3_qi1re")
+
+[node name="Sand (for hiding clipping)" type="ColorRect" parent="." unique_id=1071521089]
+offset_left = 711.0
+offset_top = 530.0
+offset_right = 1264.0
+offset_bottom = 686.0
+color = Color(0.99607843, 0.8980392, 0.3372549, 1)
 
 [node name="Trashbag2" type="Sprite2D" parent="." unique_id=1455494143]
 visible = false

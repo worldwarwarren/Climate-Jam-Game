@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c2ogiv2u2c4ix"]
 
 [ext_resource type="Script" uid="uid://duxwq51gwwaig" path="res://Scripts/Microgames/consuming.gd" id="1_7uxgf"]
-[ext_resource type="FontFile" uid="uid://djqulg3pxtcio" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
+[ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="2_1wh4r"]
 [ext_resource type="Texture2D" uid="uid://dl6845g2y1kp5" path="res://Assets/Art/Sprites/pixel_shoppingcart.png" id="2_3p6lr"]
+[ext_resource type="Texture2D" uid="uid://bi8yyiqmuwrd1" path="res://Assets/Art/Backgrounds/checkout.png" id="2_s4jr6"]
 [ext_resource type="AudioStream" uid="uid://bpn8etkhj2bbd" path="res://Assets/Audio/SFX/cashsound.mp3" id="4_3p6lr"]
 [ext_resource type="AudioStream" uid="uid://bydmb30wkxhua" path="res://Assets/Audio/SFX/supermarketambience.mp3" id="5_a6wwd"]
 
@@ -31,6 +32,8 @@ size = Vector2(1496, 78)
 font = ExtResource("2_1wh4r")
 font_size = 112
 font_color = Color(1, 0, 0, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Consuming" type="Node2D" unique_id=1155202526]
 position = Vector2(-576, -324)
@@ -39,7 +42,13 @@ script = ExtResource("1_7uxgf")
 verb = "Consuming"
 difficultyTimes = Array[float]([10.0, 8.0, 6.0])
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227429835]
+[node name="Background" type="Sprite2D" parent="." unique_id=1731721900]
+modulate = Color(0.57700837, 0.5770084, 0.57700825, 1)
+position = Vector2(574.03064, 242.44928)
+scale = Vector2(10.091757, 10.091755)
+texture = ExtResource("2_s4jr6")
+
+[node name="Cart Sprite" type="Sprite2D" parent="." unique_id=1227429835]
 z_index = 1
 position = Vector2(525.585, 379.245)
 scale = Vector2(11.786562, 11.786562)
@@ -110,10 +119,10 @@ shape = SubResource("RectangleShape2D_pvcpg")
 debug_color = Color(1, 1, 0, 0.41960785)
 
 [node name="Label" type="Label" parent="." unique_id=1967592315]
-offset_left = 293.0
-offset_top = 73.0
-offset_right = 835.0
-offset_bottom = 200.0
+offset_left = 293.21793
+offset_top = -0.12612152
+offset_right = 835.2179
+offset_bottom = 126.87388
 text = "0 Items In Cart!"
 label_settings = SubResource("LabelSettings_j5tva")
 horizontal_alignment = 1

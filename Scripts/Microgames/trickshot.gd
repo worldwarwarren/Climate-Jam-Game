@@ -9,10 +9,13 @@ var direction = -1
 @onready var Ball = $Ball
 @onready var ThrowSound = $ThrowSound
 @onready var TrashcanSound = $TrashcanSound
+@onready var waters = [$Sea,$Sea2,$Sea3,$Sea4]
 
 func _physics_process(delta: float) -> void:
 	if difficulty > 1:
 		$Trashbag1.visible = true
+		for water in waters:
+			water.modulate = Color(1,1,0.7)
 		if difficulty > 2:
 			$Trashbag2.visible = true
 	if gravityActive:
@@ -22,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		Bar.rotation_degrees += difficulty*direction
 		if Bar.rotation_degrees >= 0 or Bar.rotation_degrees <= -90:
 			direction *= -1
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and not gravityActive:
 		ThrowSound.play()
 		chosenAngle = abs(Bar.rotation_degrees)
 		#chosenAngle = 55
