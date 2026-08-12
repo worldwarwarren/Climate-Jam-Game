@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cic41sgt0rki6" path="res://Assets/Art/Backgrounds/forestbackground.png" id="2_hg1rx"]
 [ext_resource type="Script" uid="uid://1pcla8cg1nae" path="res://Scripts/Microgames/saw.gd" id="2_uxl4m"]
 [ext_resource type="FontFile" uid="uid://phqnjjp50sav" path="res://Assets/Art/UI/Font/virtue_small.ttf" id="3_hg1rx"]
+[ext_resource type="Texture2D" uid="uid://c1yqu7tkelkmk" path="res://Assets/Art/Sprites/saw.png" id="5_3jrqb"]
 [ext_resource type="AudioStream" uid="uid://dsukdadm825d8" path="res://Assets/Audio/SFX/axe.mp3" id="6_sg5bd"]
 [ext_resource type="AudioStream" uid="uid://c1hgfx0wnqtfs" path="res://Assets/Audio/SFX/treefall.mp3" id="7_m6hra"]
 
@@ -18,9 +19,6 @@ font_size = 56
 
 [sub_resource type="LabelSettings" id="LabelSettings_obibw"]
 font_size = 60
-
-[sub_resource type="LabelSettings" id="LabelSettings_ovoiv"]
-font_size = 83
 
 [sub_resource type="Animation" id="Animation_0iyes"]
 length = 0.001
@@ -184,21 +182,9 @@ text = "Tree Health: 100"
 label_settings = SubResource("LabelSettings_obibw")
 horizontal_alignment = 1
 
-[node name="Saw" type="Label" parent="." unique_id=446138356]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 146.0
-offset_bottom = 146.0
-grow_horizontal = 2
-grow_vertical = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(-66.21, -58.92)
-text = "🪚"
-label_settings = SubResource("LabelSettings_ovoiv")
-horizontal_alignment = 1
+[node name="Saw" type="Sprite2D" parent="." unique_id=2023581944]
+scale = Vector2(2.64, 2.64)
+texture = ExtResource("5_3jrqb")
 script = ExtResource("2_uxl4m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=998091562]
