@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 		$ColorRect.color = Color.SLATE_GRAY
 
 func start(speed):
+	difficulty = speed
+	if difficultyTimes.size() >= speed:
+		time = difficultyTimes[speed-1]
 	target = randi_range(2, 5)
 	Score_Label.text = ("Shoot " + str(target))
 	print("Target: ", target)

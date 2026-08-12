@@ -16,7 +16,7 @@ var microgamesEasy = [
 	preload("res://Scenes/Microgames/Shining.tscn"),
 	preload("res://Scenes/Microgames/Hunting.tscn"),
 	preload("res://Scenes/Microgames/Sawing.tscn"),
-	preload("res://Scenes/Microgames/Hosing.tscn")
+	preload("res://Scenes/Microgames/Burning.tscn")
 ]
 var microgamesMid = [
 	preload("res://Scenes/Microgames/Trickshot.tscn"),
@@ -24,7 +24,6 @@ var microgamesMid = [
 	preload("res://Scenes/Microgames/Fracking.tscn"),
 	preload("res://Scenes/Microgames/Consuming.tscn"),
 	preload("res://Scenes/Microgames/Sweating.tscn"),
-	preload("res://Scenes/Microgames/Burning.tscn"),
 	preload("res://Scenes/Microgames/Sawing.tscn"),
 	preload("res://Scenes/Microgames/Hosing.tscn"),
 	preload("res://Scenes/Microgames/Shining.tscn")
@@ -43,7 +42,7 @@ var microgamesHard = [
 @onready var microgames = microgamesEasy
 #Checks the last microgame that has been played
 #Used later to prevent repeats
-var last_microgame_scene = [null,null,null]
+var last_microgame_scene = [null,null,null,null]
 @onready var microgames_left = microgamesEasy.size() # Tracking microgames that have been used already
 var last_microgame = null # For queue freeing the old one during the transition
 # Checking if the player lost or not so they can retry

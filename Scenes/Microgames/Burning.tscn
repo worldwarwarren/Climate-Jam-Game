@@ -125,6 +125,21 @@ volume_db = -5.0
 autoplay = true
 bus = &"SFX"
 
+[node name="Smoke" type="ColorRect" parent="." unique_id=1886151608]
+offset_left = -336.0
+offset_top = -184.0
+offset_right = 423.0
+offset_bottom = 108.0
+color = Color(0.17163703, 0.17163706, 0.17163697, 0.3882353)
+
+[node name="Smoke" type="ColorRect" parent="Smoke" unique_id=2038147585]
+layout_mode = 0
+offset_left = 700.0
+offset_top = -36.0
+offset_right = 1531.0
+offset_bottom = 239.0
+color = Color(0.17163703, 0.17163706, 0.17163697, 0.3882353)
+
 [node name="Label" type="Label" parent="." unique_id=1459793903]
 offset_left = 298.0
 offset_top = 5.0
