@@ -126,6 +126,7 @@ autoplay = true
 bus = &"SFX"
 
 [node name="Smoke" type="ColorRect" parent="." unique_id=1886151608]
+visible = false
 offset_left = -336.0
 offset_top = -184.0
 offset_right = 423.0
