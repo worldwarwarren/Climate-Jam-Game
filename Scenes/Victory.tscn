@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://xxyer68fet38" path="res://Misc/Base_Theme.tres" id="2_13fhg"]
 [ext_resource type="PackedScene" uid="uid://c62tsp86imudl" path="res://Scenes/Globe.tscn" id="3_13fhg"]
 [ext_resource type="AudioStream" uid="uid://bg8tnosa2ocao" path="res://Assets/Audio/SFX/MenuSound.mp3" id="4_f6307"]
+[ext_resource type="AudioStream" uid="uid://cbqlkjjht1em8" path="res://Assets/Audio/Music/destructionjingle.mp3" id="5_ebubv"]
 
 [node name="Victory" type="Control" unique_id=1848302754]
 layout_mode = 3
@@ -98,6 +99,10 @@ text = "Yes"
 [node name="MenuSelectSound" type="AudioStreamPlayer" parent="." unique_id=1207204572]
 stream = ExtResource("4_f6307")
 bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2010687667]
+stream = ExtResource("5_ebubv")
+autoplay = true
 
 [connection signal="pressed" from="Buttons/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="Buttons/Yes" to="." method="_on_yes_pressed"]

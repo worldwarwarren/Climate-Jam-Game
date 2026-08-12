@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cktocokxc2ahp" path="res://Assets/Art/Sprites/trashbag.png" id="2_cbbl8"]
 [ext_resource type="Texture2D" uid="uid://dye15bwtivnut" path="res://Assets/Art/Sprites/seed.png" id="2_jam7f"]
 [ext_resource type="PackedScene" uid="uid://rvxg5gqb5ck7" path="res://Scenes/Transition.tscn" id="3_7dym8"]
+[ext_resource type="AudioStream" uid="uid://b3cdmoh4nh3nu" path="res://Assets/Audio/Music/EndTheme.wav" id="5_6i8m2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obibw"]
 bg_color = Color(0.21772161, 0.063320994, 3.6098065e-08, 1)
@@ -225,5 +226,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.4862745, 0.08627451, 0.57254905, 0)
+
+[node name="Theme" type="AudioStreamPlayer" parent="." unique_id=1537404264]
+stream = ExtResource("5_6i8m2")
 
 [connection signal="area_entered" from="Hole" to="." method="_on_hole_area_entered"]
