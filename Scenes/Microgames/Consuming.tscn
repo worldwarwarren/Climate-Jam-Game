@@ -40,7 +40,7 @@ position = Vector2(-576, -324)
 rotation = -0.0029803023
 script = ExtResource("1_7uxgf")
 verb = "Consuming"
-difficultyTimes = Array[float]([10.0, 8.0, 6.0])
+difficultyTimes = Array[float]([9.0, 9.0, 6.0])
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1731721900]
 modulate = Color(0.57700837, 0.5770084, 0.57700825, 1)

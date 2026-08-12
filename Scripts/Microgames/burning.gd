@@ -28,6 +28,9 @@ func spawnItem(spawn_pos):
 	add_child(Item)
 
 func _process(delta: float) -> void:
+	if difficulty > 1:
+		$Smoke.visible = true
+		$Smoke.position.x += 0.1
 	if Fire != null:
 		Fire.scale -= Vector2(0.004,0.004)
 		Crackling.set_volume_db(Crackling.volume_db - 0.05)
